@@ -7,6 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10.times do
-     Movie.create(title: Faker::Movie.title, plot: Faker::Movie.quote)
+
+require 'rest-client'
+
+def imdb_secret_key 
+    ENV["IMDB_API_KEY"]
 end
+
+    
+def movie_dataset 
+
+    api_data = { key: imdb_secret_key }
+
+    movies = RestClient.get ("https://imdb-api.com/en/API/ComingSoon/#{api_data[:key]}")
+
+    movie_array = JSON.parse(movies)["items"]
+
+    movie_array.each do |movie|
+        Movie.create(title: movie["title"], release_date: movie["releaseState"], director: movie["directors"], plot: movie["plot"], image: movie["image"], genres: movie["genres"], stars: movie["stars"])
+    end
+
+end
+
+movie_dataset()

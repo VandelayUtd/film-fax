@@ -3,8 +3,11 @@ class CreateMovies < ActiveRecord::Migration[6.1]
     create_table :movies do |t|
       t.string :title
       t.string :director 
-      t.integer :year
+      t.string :image
+      t.string :release_date
+      t.string :genres
       t.string :plot
+      t.string :stars
       t.boolean :watched, default: false 
 
       t.timestamps
