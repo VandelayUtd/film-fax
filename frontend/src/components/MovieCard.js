@@ -8,11 +8,11 @@ export default function MovieCard({movie}) {
         <div>
             <img src={movie.image} alt="movie poster"/> 
                 <ul>
-                                <li>{movie.plot}</li>
-                                <li>Release Date: {movie.release_date}</li>
-                                <li>Directed by {movie.director}</li>
-                                <li>Starring {movie.stars}</li>
-                                <li>Genres: {movie.genres}</li>
+                    <li>{movie.plot}</li>
+                    <li>Release Date: {movie.release_date}</li>
+                    <li>Directed by {movie.director}</li>
+                    <li>Starring {movie.stars}</li>
+                    <li>Genres: {movie.genres}</li>
                 </ul>
         </div>
         

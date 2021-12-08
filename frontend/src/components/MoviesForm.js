@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {addMovie} from "../redux/actions/movieActions"
+import { addMovie } from "../redux/actions/movieActions"
 
  class MoviesForm extends Component {
 
