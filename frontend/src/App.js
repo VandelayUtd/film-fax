@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/movies" component={MoviesIndex}/>
+          <Route exact path="/movies" element={<MoviesIndex/>}/>
           <Route exact path="/movies/new" component={MoviesForm}/>
         </Routes>
         <Nav />
