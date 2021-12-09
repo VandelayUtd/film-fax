@@ -9,5 +9,7 @@ function movieReducer( state = {all: []}, action){
         default: 
             return state
     }
+
+    
 }
 export default movieReducer

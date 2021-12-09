@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { searchMovie } from "../redux/actions/movieActions"
 import { addMovie } from "../redux/actions/movieActions"
+import SearchedMovieItems from './SearchedMovieItems'
 
  class MoviesForm extends Component {
 
@@ -16,11 +18,12 @@ import { addMovie } from "../redux/actions/movieActions"
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addMovie(this.state)
+        this.props.searchMovie(this.state)
         this.setState({
             title: ""
         })
     }
+
 
     render() {
         return (
@@ -30,11 +33,23 @@ import { addMovie } from "../redux/actions/movieActions"
                     Movie Name: <input type="text" value={this.state.title} onChange={this.handleChange}/>
                     <input type="submit" value="Add Movie"/>
                 </form>
+                <div>
+                    <ul>
+                        <SearchedMovieItems addMovie={this.props.addMovie} searchedMovies={this.props.searchedMovies} />
+                    </ul>
+                </div>
             </div>
         )
     }
 }
 
+const mapStateToProps = ({searchedMovies}) => ({
+    searchedMovies: searchedMovies.all
+})
 
+const mapDispatchToProps = {
+    searchMovie,
+    addMovie
+}
 
-export default connect(null, { addMovie })(MoviesForm)
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesForm)

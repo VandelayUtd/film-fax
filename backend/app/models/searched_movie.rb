@@ -1,0 +1,2 @@
+class SearchedMovie < ApplicationRecord
+end

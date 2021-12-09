@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_205239) do
+ActiveRecord::Schema.define(version: 2021_12_09_165827) do
+
+  create_table "get_movies", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -21,6 +26,13 @@ ActiveRecord::Schema.define(version: 2021_12_06_205239) do
     t.string "plot"
     t.string "stars"
     t.boolean "watched", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "searched_movies", force: :cascade do |t|
+    t.string "title"
+    t.string "api_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
