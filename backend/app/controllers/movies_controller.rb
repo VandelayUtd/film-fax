@@ -1,6 +1,3 @@
-require 'dotenv'
-require 'json'
-Dotenv.load
 
 
 class MoviesController < ApplicationController
@@ -18,26 +15,27 @@ class MoviesController < ApplicationController
     API_KEY = ENV["IMDB_API_KEY"]
 
     def create
-        
-        @response =  RestClient.get "https://imdb-api.com/en/API/Title/#{API_KEY}/#{params["id"]}",
-        {content_type: :json, accept: :json, "user-key": ENV["IMDB_API_KEY"]}
+        created_movie = MovieCreator.new(params).get_movie
+        movie = Movie.new
     
-        api_params = JSON.parse(@response.body)
-        binding.pry
-        movie = Movie.new(movie_params)
-        movie.director = params[:movie][:directors]
-        movie.release_date = params[:movie]
+        movie.title = created_movie["movie"]["title"]
+        movie.image = created_movie["movie"]["image"]
+        movie.plot = created_movie["movie"]["plot"]
+        movie.genres = created_movie["movie"]["genres"]
+        movie.stars = created_movie["movie"]["stars"]
 
+        movie.release_date = created_movie["movie"]["releaseDate"]
+        movie.director = created_movie["movie"]["directors"]
         if movie.save 
             render json: movie
         end
     end
 
 
-    private
+    # private
     
-    def movie_params 
-        params.require(:movie).permit(:title, :image, :genres, :plot, :stars)
-    end
+    # def movie_params 
+    #     params.require(:movie).permit(:title, :image, :genres, :plot, :stars)
+    # end
 
 end
