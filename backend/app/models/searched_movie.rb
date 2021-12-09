@@ -1,2 +1,2 @@
-class SearchedMovie < ApplicationRecord
-end
+# class SearchedMovie < ApplicationRecord
+# end

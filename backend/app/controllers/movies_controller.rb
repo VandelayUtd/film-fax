@@ -16,18 +16,20 @@ class MoviesController < ApplicationController
 
     def create
         created_movie = MovieCreator.new(params).get_movie
-        movie = Movie.new
+        @movie = Movie.new
     
-        movie.title = created_movie["movie"]["title"]
-        movie.image = created_movie["movie"]["image"]
-        movie.plot = created_movie["movie"]["plot"]
-        movie.genres = created_movie["movie"]["genres"]
-        movie.stars = created_movie["movie"]["stars"]
+        @movie.title = created_movie["movie"]["title"]
+        @movie.image = created_movie["movie"]["image"]
+        @movie.plot = created_movie["movie"]["plot"]
+        @movie.genres = created_movie["movie"]["genres"]
+        @movie.stars = created_movie["movie"]["stars"]
 
-        movie.release_date = created_movie["movie"]["releaseDate"]
-        movie.director = created_movie["movie"]["directors"]
-        if movie.save 
-            render json: movie
+        @movie.release_date = created_movie["movie"]["releaseDate"]
+        @movie.director = created_movie["movie"]["directors"]
+        if @movie.save 
+            render json: @movie, status: :created
+        else   
+            render json: @movie.errors, status: :unprocessable_entity
         end
     end
 

@@ -7,15 +7,12 @@ import MovieCard from './MovieCard'
 class MoviesIndex extends React.Component {
 
 
-    componentDidMount(){
-        this.props.getMovies()
-    }
     
     render(){
         return (
             <div>
                 <h1>Movies</h1>
-                {this.props.movies.map((movie) => <MovieCard movie={movie} />)}
+                {this.props.movies.map((movie) => <MovieCard movie={movie} key={movie.id}/>)}
             </div>
         )
     }
