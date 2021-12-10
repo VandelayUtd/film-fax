@@ -1,2 +1,0 @@
-# class SearchedMovie < ApplicationRecord
-# end

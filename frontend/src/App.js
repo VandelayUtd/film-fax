@@ -16,12 +16,14 @@ class App extends Component {
     this.props.getMovies()
   }
   render(){
+
+
     return (
       <div className="App">
         <Router>
           <Routes>
             <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/movies" element={<MoviesIndex movies={this.props.movies}/>}/>
+            <Route exact path="/movies" element={<MoviesIndex movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
             <Route exact path="/movies/new" element={<MoviesForm />}/>
           </Routes>
           <Nav />

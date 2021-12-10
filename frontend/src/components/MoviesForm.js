@@ -18,7 +18,8 @@ import SearchedMovieItems from './SearchedMovieItems'
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.searchMovie(this.state)
+        console.log(this.state.title)
+        this.props.searchMovie(this.state.title)
         this.setState({
             title: ""
         })

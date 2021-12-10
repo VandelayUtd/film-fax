@@ -5,7 +5,6 @@ export const getMovies = () => {
         fetch('http://localhost:3001/movies')
         .then(res => res.json())
         .then(movies => {
-            console.log(movies)
             dispatch({ type: "FETCH_MOVIES_SUCCESS", payload: movies})
             }
         )
@@ -22,26 +21,32 @@ export const addMovie = (movie) => {
             },
             body: JSON.stringify(movie)
         })
-        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+            if(!res.ok){
+                throw Error('This Movie is already on the list')
+            }
+            return res.json()})
         .then(movie => {
             dispatch({type: "ADD_MOVIE", payload: movie})
         })
     }
 }
 
-export const searchMovie = (movie) => {
+export const searchMovie = (movieTitle) => {
     return(dispatch) => {
-        fetch('http://localhost:3001/searched_movies', {
-            method: "POST", 
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify(movie)
-    })
-    .then(res => res.json())
-    .then(movie => {
-    
-        dispatch({type: "SEARCH_MOVIES", payload: movie})
-    })
+        console.log(movieTitle)
+        fetch(`http://localhost:3001/movies/search?q=${movieTitle}`)
+        .then(res => res.json())
+        .then(movieData => {
+        console.log(movieData)
+            dispatch({type: "SEARCH_MOVIES", payload: movieData})
+        })
     }
 }
+
+// export const deleteMovie = (movie) => {
+//     return(dispatch) => {
+
+//     }
+// }

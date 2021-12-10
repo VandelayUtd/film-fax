@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get "/movies/search", to: "movies#search"
+
   resources :get_movies
   resources :searched_movies
   resources :movies

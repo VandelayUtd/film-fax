@@ -11,8 +11,6 @@ class MoviesController < ApplicationController
         movie = Movie.find_by(id: params[:id])
         render json: movie
     end
-    
-    API_KEY = ENV["IMDB_API_KEY"]
 
     def create
         created_movie = MovieCreator.new(params).get_movie
@@ -28,16 +26,14 @@ class MoviesController < ApplicationController
         @movie.director = created_movie["movie"]["directors"]
         if @movie.save 
             render json: @movie, status: :created
-        else   
-            render json: @movie.errors, status: :unprocessable_entity
+        else 
+            render json: @movie.errors.full_messages.to_sentence, status: :unprocessible_entity
         end
     end
 
-
-    # private
-    
-    # def movie_params 
-    #     params.require(:movie).permit(:title, :image, :genres, :plot, :stars)
-    # end
+    def search
+        searched_movies = MovieCreator.new(params).get_search_results
+        render json: searched_movies
+    end
 
 end
