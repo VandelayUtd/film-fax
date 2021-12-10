@@ -21,7 +21,7 @@ class App extends Component {
         <Router>
           <Routes>
             <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/movies" element={<MoviesIndex/>}/>
+            <Route exact path="/movies" element={<MoviesIndex movies={this.props.movies}/>}/>
             <Route exact path="/movies/new" element={<MoviesForm />}/>
           </Routes>
           <Nav />
@@ -31,6 +31,6 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({state: state})
+const mapStateToProps = (state) => ({movies: state.movies.all})
 
 export default connect(mapStateToProps, { getMovies })(App);

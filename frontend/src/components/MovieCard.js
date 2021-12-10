@@ -8,7 +8,7 @@ export default function MovieCard({movie}) {
 
     return (
         <div>
-            <li key={movie.id}>
+            <li >
                 <span>{movie.title}</span>
                 {
                     show ?
