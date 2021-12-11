@@ -21,7 +21,8 @@ import SearchedMovieItems from './SearchedMovieItems'
         console.log(this.state.title)
         this.props.searchMovie(this.state.title)
         this.setState({
-            title: ""
+            title: "",
+            error: null 
         })
     }
 

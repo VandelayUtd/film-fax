@@ -21,15 +21,14 @@ export const addMovie = (movie) => {
             },
             body: JSON.stringify(movie)
         })
-        .then(res => {
-            console.log(res);
-            if(!res.ok){
-                throw Error('This Movie is already on the list')
-            }
-            return res.json()})
+        .then(res => res.json())
         .then(movie => {
+            if (movie.error){
+                alert("This Movie is already on the list")
+            } else {
+                alert(`${movie.title} has been added to the list`)
             dispatch({type: "ADD_MOVIE", payload: movie})
-        })
+        }})
     }
 }
 
