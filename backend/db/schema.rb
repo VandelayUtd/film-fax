@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_205239) do
     t.string "genres"
     t.string "plot"
     t.string "stars"
-    t.boolean "watched", default: false
+    t.string "api_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

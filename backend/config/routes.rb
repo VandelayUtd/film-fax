@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get "/movies/search", to: "movies#search"
+  delete "/movies/:id", to: "movies#delete"
 
   resources :get_movies
   resources :searched_movies

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import MovieDetails from './MovieDetails'
 
-export default function MovieCard({movie}) {
+export default function MovieCard(props) {
 
     const [show, setShow]=useState(false)
 
@@ -9,15 +9,16 @@ export default function MovieCard({movie}) {
     return (
         <div>
             <li >
-                <span>{movie.title}</span>
+                <span>{props.movie.title}</span>
                 {
                     show ?
                     <div>
-                        <MovieDetails movie={movie}/>
+                        <MovieDetails movie={props.movie}/>
                     </div> 
                     : null
                 }
                 <button onClick={()=> setShow(!show)}>info</button>
+                <button onClick={()=> props.deleteMovie(props.movie.id)}>delete</button>
             </li>
         </div>
     )

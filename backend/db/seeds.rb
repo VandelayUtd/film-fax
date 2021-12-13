@@ -24,7 +24,7 @@ def movie_dataset
     movie_array = JSON.parse(movies)["items"]
 
     movie_array.each do |movie|
-        Movie.create(title: movie["title"], release_date: movie["releaseState"], director: movie["directors"], plot: movie["plot"], image: movie["image"], genres: movie["genres"], stars: movie["stars"])
+        Movie.create(title: movie["title"], release_date: movie["releaseState"], director: movie["directors"], plot: movie["plot"], image: movie["image"], genres: movie["genres"], stars: movie["stars"], api_id: movie["id"])
     end
 
 end

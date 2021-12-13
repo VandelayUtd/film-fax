@@ -33,7 +33,7 @@ import SearchedMovieItems from './SearchedMovieItems'
                 <h1>Add a Movie to the list</h1>
                 <form onSubmit={this.handleSubmit}>
                     Movie Name: <input type="text" value={this.state.title} onChange={this.handleChange}/>
-                    <input type="submit" value="Add Movie"/>
+                    <input type="submit" value="Search"/>
                 </form>
                 <div>
                     <ul>

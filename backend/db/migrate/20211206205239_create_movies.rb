@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :genres
       t.string :plot
       t.string :stars
+      t.string :api_id
 
       t.timestamps
     end

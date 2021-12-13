@@ -24,16 +24,26 @@ class MoviesController < ApplicationController
 
         @movie.release_date = created_movie["movie"]["releaseDate"]
         @movie.director = created_movie["movie"]["directors"]
+        @movie.api_id = created_movie["movie"]["id"]
         if @movie.save 
             render json: @movie, status: :created
         else 
-            render json: @movie.errors.full_messages.to_sentence, status: :unprocessible_entity
+            render json: {error: "#{@movie.title} is already on the list"}, status: :unprocessable_entity
         end
     end
 
     def search
         searched_movies = MovieCreator.new(params).get_search_results
         render json: searched_movies
+    end
+
+    def delete 
+        @movie = Movie.find(params[:id])
+        if @movie.destroy 
+            render json: { confirmation: "#{@movie.title} has been removed from the list"}, status: :ok 
+        else  
+            render json: { error: "your request was denied"}, status: :unprocessable_entity
+        end
     end
 
 end

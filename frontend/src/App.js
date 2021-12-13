@@ -6,7 +6,7 @@ import MoviesIndex from "./components/MoviesIndex"
 import MoviesForm from "./components/MoviesForm"
 import Nav from "./components/Nav"
 import { connect } from "react-redux"
-import { getMovies } from "./redux/actions/movieActions"
+import { getMovies, deleteMovie } from "./redux/actions/movieActions"
 
 
 
@@ -35,4 +35,9 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({movies: state.movies.all})
 
-export default connect(mapStateToProps, { getMovies })(App);
+const mapDispatchToProps = {
+  getMovies,
+  deleteMovie
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
