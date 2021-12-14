@@ -55,6 +55,5 @@ export const deleteMovie = (movieId) => {
         .then(movieData => {
             dispatch({ type:"DELETE_MOVIE_SUCCESS", payload: movieData, movieId})
         })
-        .catch()
     }
 }

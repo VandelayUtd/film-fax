@@ -18,12 +18,14 @@ import SearchedMovieItems from './SearchedMovieItems'
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.title)
+        if (this.state.title.length > 0){
         this.props.searchMovie(this.state.title)
         this.setState({
             title: "",
             error: null 
-        })
+        })} else {
+            alert("search field cannot be blank")
+        }
     }
 
 
