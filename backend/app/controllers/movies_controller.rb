@@ -7,10 +7,6 @@ class MoviesController < ApplicationController
         render json: movies
     end
 
-    def show 
-        movie = Movie.find_by(id: params[:id])
-        render json: movie
-    end
 
     def create
         created_movie = MovieCreator.new(params).get_movie
@@ -21,10 +17,10 @@ class MoviesController < ApplicationController
         movie.plot = created_movie["plot"]
         movie.genres = created_movie["genres"]
         movie.stars = created_movie["stars"]
-
         movie.release_date = created_movie["releaseDate"]
         movie.director = created_movie["directors"]
         movie.api_id = created_movie["id"]
+
         if movie.save 
             render json: movie, status: :created
         else 

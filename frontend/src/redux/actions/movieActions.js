@@ -14,6 +14,7 @@ export const getMovies = () => {
 
 export const addMovie = (movie) => {
     return (dispatch) => {
+        
         fetch('http://localhost:3001/movies',{
             method: "POST", 
             headers: {
