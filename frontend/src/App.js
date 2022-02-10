@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Home from "./components/Home"
 import MoviesIndex from "./components/MoviesIndex"
 import MoviesForm from "./components/MoviesForm"
-import Nav from "./components/Nav"
+import Nav from "./components/nav/Nav"
 import { connect } from "react-redux"
 import { getMovies, deleteMovie } from "./redux/actions/movieActions"
 
