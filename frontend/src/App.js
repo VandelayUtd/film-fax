@@ -1,13 +1,14 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Home from "./components/Home"
-import MoviesIndex from "./components/MoviesIndex"
-import MoviesForm from "./components/MoviesForm"
-import Nav from "./components/nav/Nav"
-import { connect } from "react-redux"
-import { getMovies, deleteMovie } from "./redux/actions/movieActions"
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from './routes/home/home.component';
+import MovieIndex from './components/movie-index/movie-index.component';
+import MovieForm from './components/movie-form/movie-form.component';
+import Nav from './components/nav/navbar.component';
+import { connect } from 'react-redux';
+import { getMovies, deleteMovie } from './redux/actions/movieActions';
 
+// import 'boostrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
@@ -18,12 +19,12 @@ class App extends Component {
   render(){
 
     return (
-      <div className="App">
+      <div className='App' >
         <Router>
           <Routes>
-            <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/movies" element={<MoviesIndex movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
-            <Route exact path="/movies/new" element={<MoviesForm />}/>
+            <Route exact path='/' element={<Home/>}/>
+            <Route exact path='/movies' element={<MovieIndex movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
+            <Route exact path='/movies/new' element={<MovieForm />}/>
           </Routes>
           <Nav />
         </Router>

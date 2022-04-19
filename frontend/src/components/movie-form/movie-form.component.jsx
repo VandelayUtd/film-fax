@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { searchMovie } from "../redux/actions/movieActions"
-import { addMovie } from "../redux/actions/movieActions"
-import SearchedMovieItems from './SearchedMovieItems'
 
- class MoviesForm extends Component {
+import { searchMovie } from '../../redux/actions/movieActions'
+import { addMovie } from '../../redux/actions/movieActions'
+
+import SearchedMovieItems from '../SearchedMovieItems';
+
+ class MovieForm extends Component {
 
     state = {
-        title: ""
+        title: ''
     }
 
     handleChange = (e) => {
@@ -21,10 +23,10 @@ import SearchedMovieItems from './SearchedMovieItems'
         if (this.state.title.length > 0){
         this.props.searchMovie(this.state.title)
         this.setState({
-            title: "",
+            title: '',
             error: null 
         })} else {
-            alert("search field cannot be blank")
+            alert('search field cannot be blank')
         }
     }
 
@@ -34,7 +36,7 @@ import SearchedMovieItems from './SearchedMovieItems'
             <div>
                 <h1>Add a Movie to the list</h1>
                 <form onSubmit={this.handleSubmit}>
-                    Movie Name: <input type="text" value={this.state.title} onChange={this.handleChange}/>
+                    Movie Name: <input type='text' value={this.state.title} onChange={this.handleChange}/>
                     <input type="submit" value="Search"/>
                 </form>
                 <div>
@@ -56,4 +58,4 @@ const mapDispatchToProps = {
     addMovie
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoviesForm)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieForm)

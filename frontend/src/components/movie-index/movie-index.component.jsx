@@ -1,13 +1,13 @@
 import React from 'react'
-import MovieCard from './MovieCard'
+import MovieCard from '../movie-card/movie-card.component'
 
 
-export default function MoviesIndex(props) {
+const MovieIndex = (props) => {
         return (
             <div>
                 <h1>Movies</h1>
                 {props.movies.map((movie) => <MovieCard movie={movie} key={movie.id} deleteMovie={props.deleteMovie}/>)}
             </div>
-        )
-}
-
+        );
+};
+export default MovieIndex;

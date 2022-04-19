@@ -1,25 +1,25 @@
-import React, {useState} from 'react'
-import MovieDetails from './MovieDetails'
+import React, {useState} from 'react';
+import MovieDropdown from '../movie-dropdown/movie-dropdown.component';
 
-export default function MovieCard(props) {
+const MovieCard = (props) => {
 
-    const [show, setShow]=useState(false)
-
+    const [show, setShow]=useState(false);
 
     return (
-        <div>
-            <li >
+        <div >
+            <div >
                 <span>{props.movie.title}</span>
                 {
                     show ?
                     <div>
-                        <MovieDetails movie={props.movie}/>
+                        <MovieDropdown movie={props.movie}/>
                     </div> 
                     : null
                 }
                 <button onClick={()=> setShow(!show)}>info</button>
                 <button onClick={()=> props.deleteMovie(props.movie.id)}>delete</button>
-            </li>
+            </div>
         </div>
-    )
-}
+    );
+};
+export default MovieCard;
