@@ -5,7 +5,6 @@ const MovieDropdown = (props) => {
 
     const movieCard = (
         <div >
-            <img src={props.movie.image} alt="movie poster" style={{width: 128, height: 176}}/> 
                 <div>
                     <span>{props.movie.plot}</span>
                     <span>Release Date: {props.movie.release_date}</span>
