@@ -14,8 +14,8 @@ export const Title = styled.div`
 
 export const MovieContainer = styled.div`
     background-color: #000000;
-    margin-right: 8rem;
-    margin-left: 8rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
     margin-top: 6rem;
 
 `
@@ -25,6 +25,6 @@ export const MovieGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 350px));  
     ${'' /* background-color: #111111; */}
-    padding: 2em;
+    
 `
 

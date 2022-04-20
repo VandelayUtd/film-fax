@@ -32,7 +32,7 @@ export const Card = styled.div`
         transition: 0s color font-weight; 
     } 
 
-    &:hover {
+
         background-color: white;
 
         transition-delay: 100ms;
@@ -53,7 +53,6 @@ export const Card = styled.div`
             height: 270px;
             transition-delay: 100ms;
         }
-    }
 
 
     button + button {
