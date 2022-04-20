@@ -1,13 +1,25 @@
 import React from 'react'
 import MovieCard from '../movie-card/movie-card.component'
 
+import { MovieContainer, Title, Container } from './movie-index.styles';
 
-const MovieIndex = (props) => {
+
+const MovieIndex = ({movies, deleteMovie}) => {
         return (
-            <div>
-                <h1>Movies</h1>
-                {props.movies.map((movie) => <MovieCard movie={movie} key={movie.id} deleteMovie={props.deleteMovie}/>)}
-            </div>
+            <Container>
+                <Title>Movies</Title>
+                <MovieContainer>
+                {
+                    movies.map((movie) => 
+                        <MovieCard 
+                            movie={movie} 
+                            key={movie.id} 
+                            deleteMovie={deleteMovie}
+                        />
+                    )
+                }
+                </MovieContainer>
+            </Container>
         );
 };
 export default MovieIndex;

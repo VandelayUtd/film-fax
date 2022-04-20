@@ -1,25 +1,28 @@
 import React, {useState} from 'react';
 import MovieDropdown from '../movie-dropdown/movie-dropdown.component';
 
-const MovieCard = (props) => {
+import { CardContainer, Title } from './movie-card.styles';
+
+const MovieCard = ({movie, deleteMovie}) => {
 
     const [show, setShow]=useState(false);
 
     return (
-        <div >
+        <CardContainer >
             <div >
-                <span>{props.movie.title}</span>
+                <Title>{movie.title}</Title>
                 {
                     show ?
                     <div>
-                        <MovieDropdown movie={props.movie}/>
+                        <MovieDropdown movie={movie}/>
                     </div> 
                     : null
                 }
+                <br/>
                 <button onClick={()=> setShow(!show)}>info</button>
-                <button onClick={()=> props.deleteMovie(props.movie.id)}>delete</button>
+                <button onClick={()=> deleteMovie(movie.id)}>delete</button>
             </div>
-        </div>
+        </CardContainer>
     );
 };
 export default MovieCard;
