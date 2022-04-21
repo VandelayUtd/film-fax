@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SearchedMovieItems(props) {
+function SearchResults(props) {
 
     const searchedMovieCards = props.searchedMovies.map(movie => (
         <li key={movie.id}>
@@ -17,3 +17,4 @@ export default function SearchedMovieItems(props) {
         </div>
     )
 }
+export default SearchResults;

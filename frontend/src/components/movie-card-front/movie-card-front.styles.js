@@ -25,8 +25,10 @@ export const Card = styled.div`
         transition: 0s background color;
     }
 
-    span {
-        font-family: 'Poiret One';
+    div {
+        text-align: left;
+        margin-left: 2rem;
+        font-family: 'Fira Sans';
         font-size: 1.2em;
         color: white;
         transition: 0s color font-weight; 
@@ -43,7 +45,7 @@ export const Card = styled.div`
             transition-delay: 100ms;
         }
 
-        span {
+        div {
             color: black;
             font-weight: bold;
             transition-delay: 100ms;

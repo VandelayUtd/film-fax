@@ -2,17 +2,18 @@ import React from 'react'
 import { Card } from './movie-card-back.styles'
 
 
-const MovieCardBack = ({movie}) => {
+const MovieCardBack = ({movie, handleToggle}) => {
 
 
     return (
         <Card >
-                <div>
-                    <span>{movie.plot}</span>
+                <div onClick={handleToggle}>
+                    <img src={movie.image}/>
                     <span>Release Date: {movie.release_date}</span>
-                    <span style={{color: 'white'}}>Directed by {movie.director}</span>
+                    <span >Directed by {movie.director}</span>
                     <span>Starring {movie.stars}</span>
                     <span>Genres: {movie.genres}</span>
+                    <p>{movie.plot}</p>
                 </div>
         </Card>
     )

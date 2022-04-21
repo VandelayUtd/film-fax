@@ -26,8 +26,7 @@ export const Card = styled.div`
     }
 
     span {
-        font-family: 'Poiret One';
-        font-size: 1.2em;
+        font-family: 'Fira Sans';
         color: white;
         transition: 0s color font-weight; 
     } 
