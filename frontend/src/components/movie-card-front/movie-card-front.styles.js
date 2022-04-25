@@ -11,7 +11,7 @@ export const Card = styled.div`
     img { 
         height: 250px;
         object-fit: contain;
-        transition: 0s height;
+        ${'' /* transition: 0s height; */}
     }
 
     button {
@@ -51,10 +51,10 @@ export const Card = styled.div`
             transition-delay: 100ms;
         }
 
-        img{
+        ${'' /* img{
             height: 270px;
             transition-delay: 100ms;
-        }
+        } */}
     }
 
 
