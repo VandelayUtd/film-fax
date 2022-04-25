@@ -1,20 +1,21 @@
 import React from 'react'
+import { ResultContainer } from './search-results.styles';
 
-function SearchResults(props) {
+const SearchResults = ({ searchedMovies, addMovie }) => {
 
-    const searchedMovieCards = props.searchedMovies.map(movie => (
-        <li key={movie.id}>
-            <h3 >{movie.title} {movie.description}</h3>
-            <button onClick={()=> props.addMovie(movie)}>add</button>
-        </li>
-    ))
-
+    
     return (
-        <div>
-            <ul>
-               {searchedMovieCards} 
-            </ul>
-        </div>
+        <>
+            {
+                searchedMovies.map(movie => (
+                <ResultContainer key={movie.id}>
+                    <img src={movie.image} alt={movie.title}/>
+                    <h3 >{movie.title} {movie.description}</h3>
+                    <button onClick={()=> addMovie(movie)}>add</button>
+                </ResultContainer>
+            ))        
+            }
+        </>
     )
 }
 export default SearchResults;

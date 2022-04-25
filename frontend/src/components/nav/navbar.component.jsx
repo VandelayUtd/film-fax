@@ -1,14 +1,18 @@
 import React from 'react';
-import { NavLink } from './navbar.styles';
+import { Outlet } from 'react-router-dom';
+import { NavLink, NavContainer } from './navbar.styles';
 
 
 const Nav = () => {
     return (
-        <div className='options'>
-            <NavLink to="/">Welcome</NavLink>
-            <NavLink to="/movies">Movies</NavLink>
-            <NavLink to="/movies/new">Movie Search</NavLink>
-        </div>
+        <>
+            <NavContainer>
+                <NavLink to="/">Welcome</NavLink>
+                <NavLink to="/movies">Movies</NavLink>
+                <NavLink to="/movies/new">Movie Search</NavLink>
+            </NavContainer>
+            <Outlet />
+        </>
     );
 };
 

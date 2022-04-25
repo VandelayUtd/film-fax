@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getMovies, deleteMovie } from './redux/actions/movieActions';
 
@@ -19,14 +19,13 @@ class App extends Component {
 
     return (
       <div className='App' >
-        <Router>
-          <Routes>
-            <Route exact path='/' element={<Home/>}/>
-            <Route exact path='/movies' element={<MovieIndex movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
-            <Route exact path='/movies/new' element={<Search />}/>
-          </Routes>
-          <Nav />
-        </Router>
+        <Routes>
+          <Route path='/' element={<Nav />}>
+            <Route index element={<Home/>}/>
+            <Route path='/movies' element={<MovieIndex movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
+            <Route path='/movies/new' element={<Search />}/>
+          </Route>
+        </Routes>
       </div>
     );
   }
