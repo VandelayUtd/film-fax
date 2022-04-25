@@ -16,7 +16,9 @@ export const MovieContainer = styled.div`
     background-color: #000000;
     margin-right: 4rem;
     margin-left: 4rem;
-    margin-top: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 25px; 
 
 `
 

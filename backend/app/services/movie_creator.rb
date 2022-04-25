@@ -27,4 +27,8 @@ class MovieCreator
         movie_array = JSON.parse(response.body)["results"]
     end
 
+    # def get_search_results_details(array) 
+        
+    # end
+
 end

@@ -11,6 +11,7 @@ export const Card = styled.div`
     img { 
         height: 250px;
         object-fit: contain;
+        border-radius: 25px;
         ${'' /* transition: 0s height; */}
     }
 
