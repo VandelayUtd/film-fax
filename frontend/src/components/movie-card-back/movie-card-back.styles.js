@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Card = styled.div`
     ${'' /* width: 185px;
     height: 300px; */}
-    padding-top: 1rem; 
+    padding-top: 1rem;
     background-color: #111111;
     transition: 0s background-color;
     
