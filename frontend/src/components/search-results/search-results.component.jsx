@@ -14,6 +14,7 @@ const SearchResults = ({ searchedMovies, addMovie }) => {
                         <Details >
                             <h3 >{movie.title}</h3>
                             <span>{movie.description}</span>
+                            <p>{movie.plot}</p>
                         </Details>
                             <button onClick={()=> addMovie(movie)}>add</button>
                     </ResultCard>
