@@ -26,6 +26,13 @@ const SearchResults = ({ searchedMovies, addMovie }) => {
                                 <p>In the middle of the night, private eye Philip Marlowe drives his friend Terry Lennox to the Mexican border. When Marlowe returns home police are waiting for him and learns that Terry's wife Sylvia has been killed. He's arrested as an accessory but released after a few days and is told the case is closed since Terry Lennox has seemingly committed suicide in Mexico. Marlowe is visited by mobster Marty Augustine who wants to know what happened to the $350,000 Lennox was supposed to deliver for him. </p>
                             </div>
                             <button onClick={()=> addMovie(movie)}>add</button>
+                            <div>
+                                {
+                                    movie.similars.map(movie => (
+                                        <span>{movie.title}</span>
+                                    ))
+                                }
+                            </div>
                     </ResultCard>
                 ))        
                 }
