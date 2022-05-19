@@ -8,7 +8,7 @@ const MovieCardBack = ({movie, handleToggle}) => {
     return (
         <Card >
                 <div onClick={handleToggle}>
-                    <img src={movie.image}/>
+                    <img src={movie.image} alt={movie.title}/>
                     <span>Release Date: {movie.release_date}</span>
                     <span >Directed by {movie.director}</span>
                     <span>Starring {movie.stars}</span>

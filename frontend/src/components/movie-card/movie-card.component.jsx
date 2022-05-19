@@ -1,7 +1,7 @@
 import React, { Fragment, useState} from 'react';
-import MovieDropdown from '../movie-dropdown/movie-dropdown.component';
+// import MovieDropdown from '../movie-dropdown/movie-dropdown.component';
 import MovieCardFront from '../movie-card-front/movie-card-front.component';
-import { Card, Title, Image, Footer, Button} from './movie-card.styles';
+// import { Card, Title, Image, Footer, Button} from './movie-card.styles';
 import MovieCardBack from '../movie-card-back/movie-card-back.component';
 
 

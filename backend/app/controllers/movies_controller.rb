@@ -20,6 +20,9 @@ class MoviesController < ApplicationController
         movie.release_date = created_movie["releaseDate"]
         movie.director = created_movie["directors"]
         movie.api_id = created_movie["id"]
+        movie.dp_name = created_movie["dp"]["items"][0]["name"]
+        movie.dp_id = created_movie["dp"]["items"][0]["id"]
+
 
         if movie.save 
             render json: movie, status: :created

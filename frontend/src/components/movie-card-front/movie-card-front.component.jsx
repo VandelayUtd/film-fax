@@ -6,7 +6,7 @@ const MovieCardFront = ({movie, handleDelete, handleToggle}) => {
 
     return (
         <Card >
-                <img src={movie.image} />
+                <img src={movie.image} alt={movie.title}/>
                 <br/>
                 <div>{movie.title}</div>
                 <Footer>

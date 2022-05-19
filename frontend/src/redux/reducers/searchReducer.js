@@ -1,5 +1,4 @@
 function searchReducer( state = { all: []}, action){
-    console.log(action)
     switch(action.type) {
         case "SEARCH_MOVIES": 
             return {...state, 

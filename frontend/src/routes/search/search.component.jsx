@@ -7,6 +7,7 @@ import { addMovie } from '../../redux/actions/movieActions';
 import SearchResults from '../../components/search-results/search-results.component';
 import SearchInput from '../../components/search-input/search-input.component'
 
+import { SearchResultsContainer } from './search.styles'
 
  class Search extends Component {
 
@@ -15,7 +16,6 @@ import SearchInput from '../../components/search-input/search-input.component'
     }
 
     handleChange = (e) => {
-        console.log('hit')
         const { value, name } = e.target;
         this.setState({
             [name]: value
@@ -24,7 +24,6 @@ import SearchInput from '../../components/search-input/search-input.component'
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
         if (this.state.title.length > 0){
         this.props.searchMovie(this.state.title)
         this.setState({
@@ -48,11 +47,9 @@ import SearchInput from '../../components/search-input/search-input.component'
                         label='Search'    
                     />
                 </form>
-                <div>
-                    <ul>
-                        <SearchResults addMovie={this.props.addMovie} searchedMovies={this.props.searchedMovies} />
-                    </ul>
-                </div>
+                <SearchResultsContainer>
+                    <SearchResults addMovie={this.props.addMovie} searchedMovies={this.props.searchedMovies} />
+                </SearchResultsContainer>
             </div>
         )
     }
