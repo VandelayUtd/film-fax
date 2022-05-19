@@ -7,7 +7,8 @@ export const SearchResultsContainer = styled.div`
     margin-left: 4rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    border-radius: 25px; 
+    border-radius: 4px; 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `

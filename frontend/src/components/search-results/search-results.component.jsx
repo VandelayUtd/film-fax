@@ -1,5 +1,5 @@
 import React from 'react'
-import {  ResultCard, Details } from './search-results.styles';
+import {  ResultCard, ButtonContainer, TextArea, Details } from './search-results.styles';
 
 const SearchResults = ({ searchedMovies, addMovie }) => {
 
@@ -10,8 +10,17 @@ const SearchResults = ({ searchedMovies, addMovie }) => {
                     searchedMovies.map(movie => (
                     <ResultCard key={movie.id}>
                         <img src={movie.image} alt={movie.title}/>
-                        <span>{movie.title}</span>
-                        <span>{movie.year}</span>
+                        <div>
+                            <TextArea>
+                                <span>{movie.title}</span>
+                                <span>{movie.details}</span>
+                            </TextArea>
+                            <br/>
+                            <ButtonContainer>
+                                <button>info</button>
+                                <button onClick={()=> addMovie(movie)}>add</button>
+                            </ButtonContainer>
+                        </div>
                         
                         {/* <Details >
                             <span>Directed by {movie.directors}</span>
@@ -25,7 +34,6 @@ const SearchResults = ({ searchedMovies, addMovie }) => {
                                 <h3>"{movie.tagline}"</h3>
                                 <p>{movie.plot}</p>
                             </div> */}
-                            <button onClick={()=> addMovie(movie)}>add</button>
                             {/* <div>
                                 { movie.similars.length > 0 &&
                                     movie.similars.map(movie => (
