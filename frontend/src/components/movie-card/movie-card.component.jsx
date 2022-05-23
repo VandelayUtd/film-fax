@@ -9,8 +9,8 @@ const MovieCard = ({movie, deleteMovie}) => {
 
     const [show, setShow]=useState(false);
 
-    const handleDelete = () => {
-        console.log('delete triggered')
+    const handleDelete = (e) => {
+        deleteMovie(movie.id)
     }
 
     const handleToggle = () => {

@@ -20,8 +20,8 @@ class MoviesController < ApplicationController
         movie.release_date = created_movie["releaseDate"]
         movie.director = created_movie["directors"]
         movie.api_id = created_movie["id"]
-        movie.dp_name = created_movie["dp"]["items"][0]["name"]
-        movie.dp_id = created_movie["dp"]["items"][0]["id"]
+        # movie.dp_name = created_movie["dp"]["items"][0]["name"]
+        # movie.dp_id = created_movie["dp"]["items"][0]["id"]
 
 
         if movie.save 
@@ -34,6 +34,11 @@ class MoviesController < ApplicationController
     def search
         searched_movies = MovieCreator.new(params).get_search_results
         render json: searched_movies
+    end
+
+    def info 
+        movie_info = MovieCreator.new(params).get_movie
+        render json: movie_info
     end
 
     def delete 
