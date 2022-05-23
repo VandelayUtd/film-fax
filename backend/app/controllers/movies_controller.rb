@@ -23,7 +23,6 @@ class MoviesController < ApplicationController
         # movie.dp_name = created_movie["dp"]["items"][0]["name"]
         # movie.dp_id = created_movie["dp"]["items"][0]["id"]
 
-
         if movie.save 
             render json: movie, status: :created
         else 
@@ -33,11 +32,13 @@ class MoviesController < ApplicationController
 
     def search
         searched_movies = MovieCreator.new(params).get_search_results
+        # @movies_details = GetSearchDetailsJob.perform_later(searched_movies)
+        
         render json: searched_movies
     end
 
     def info 
-        movie_info = MovieCreator.new(params).get_movie
+        movie_info = @movies_details.find(params[:id])
         render json: movie_info
     end
 
