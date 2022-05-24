@@ -23,7 +23,8 @@ export const TextArea = styled.div`
     display:grid;
 
     span { 
-        font-size: 2em;
+        font-size: 1.3em;
+        font-weight: 500;
         float: left;
         text-align: left;
         font-family: 'Fira Sans';

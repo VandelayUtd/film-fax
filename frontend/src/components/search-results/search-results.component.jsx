@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react'
+// import { getDetails } from '../../redux/actions/movieActions';
 import {  ResultCard, ButtonContainer, TextArea, Details } from './search-results.styles';
 
-const SearchResults = ({ searchedMovies, moviesInfo, addMovie }) => {
+const SearchResults = ({ searchedMovies, fullDetails, addMovie, getDetails }) => {
 
-    useEffect(() => {
-        getMoviesInfo()
-    }, [])    
 
-    const handleInfo = () => {
-        console.log(moviesInfo)
+    // useEffect(() => {
+    //     getDetails()
+    // }, [])    
+
+    const handleInfo = (movieId) => {
+
+        const movieDetails = fullDetails.find(movie => movie.id === movieId)
+        console.log(movieDetails)
+
     }
 
     
@@ -25,7 +30,7 @@ const SearchResults = ({ searchedMovies, moviesInfo, addMovie }) => {
                             </TextArea>
                             <br/>
                             <ButtonContainer>
-                                <button onClick={handleInfo} >info</button>
+                                <button onClick={()=> handleInfo(movie.id)} >info</button>
                                 <button onClick={()=> addMovie(movie)}>add</button>
                             </ButtonContainer>
                         </div>

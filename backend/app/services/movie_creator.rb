@@ -7,6 +7,7 @@ Dotenv.load
 class MovieCreator 
     API_KEY = ENV["IMDB_API_KEY"]
 
+
     def initialize(movie)
         @movie = movie
     end

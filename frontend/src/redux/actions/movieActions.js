@@ -44,16 +44,28 @@ export const searchMovie = (movieTitle) => {
     }
 }
 
-
-export const getInfo = (movieId) => {
+export const getDetails = () => {
     return(dispatch) => {
-        fetch(`http://localhost:3001/movies/info/${movieId}`)
+        fetch(`http://localhost:3001/movies/info`)
         .then(res => res.json())
-        .then(data => {
-            dispatch({ type: "GET_MOVIE_INFO", payload: data})
+        .then(detailData => {
+            console.log(detailData)
+            dispatch({type: "GET_DETAILS", payload: detailData})
         })
+        .catch()
     }
 }
+
+
+// export const getInfo = (movieId) => {
+//     return(dispatch) => {
+//         fetch(`http://localhost:3001/movies/info/${movieId}`)
+//         .then(res => res.json())
+//         .then(data => {
+//             dispatch({ type: "GET_MOVIE_INFO", payload: data})
+//         })
+//     }
+// }
 
 // export const getMoviesInfo = () => {
 //     return(dispatch) => {
