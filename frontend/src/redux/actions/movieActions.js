@@ -44,6 +44,17 @@ export const searchMovie = (movieTitle) => {
     }
 }
 
+export const getMoviesInfo = () => {
+    return(dispatch) => {
+        fetch(`http://localhost:3001/movies/info`)
+        .then(res => res.json())
+        .then(data => {
+            dispatch({type: "GET_MOVIES_INFO", payload: data})
+        })
+        .catch()
+    }
+}
+
 export const deleteMovie = (movieId) => {
     return(dispatch) => {
         fetch(`http://localhost:3001/movies/${movieId}`, {

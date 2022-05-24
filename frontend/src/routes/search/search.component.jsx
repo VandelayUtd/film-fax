@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { searchMovie } from '../../redux/actions/movieActions';
+import { searchMovie, getMoviesInfo } from '../../redux/actions/movieActions';
 import { addMovie } from '../../redux/actions/movieActions';
 
 import SearchResults from '../../components/search-results/search-results.component';
@@ -26,6 +26,7 @@ import { SearchResultsContainer } from './search.styles'
         e.preventDefault()
         if (this.state.title.length > 0){
         this.props.searchMovie(this.state.title)
+        this.props.getMoviesInfo()
         this.setState({
             title: '',
             error: null 
@@ -55,12 +56,14 @@ import { SearchResultsContainer } from './search.styles'
     }
 }
 
-const mapStateToProps = ({searchedMovies}) => ({
-    searchedMovies: searchedMovies.all
+const mapStateToProps = ({ searchedMovies }) => ({
+    searchedMovies: searchedMovies.all,
+    moviesInfo: searchedMovies.fullDetails
 })
 
 const mapDispatchToProps = {
     searchMovie,
+    getMoviesInfo,
     addMovie
 }
 
