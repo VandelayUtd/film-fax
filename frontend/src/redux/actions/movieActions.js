@@ -38,22 +38,33 @@ export const searchMovie = (movieTitle) => {
         fetch(`http://localhost:3001/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
-            dispatch({type: "SEARCH_MOVIES", payload: movieData})
+            dispatch({type: "SEARCH_MOVIES", payload: movieData.searched_movies})
         })
         .catch()
     }
 }
 
-export const getMoviesInfo = () => {
+
+export const getInfo = (movieId) => {
     return(dispatch) => {
-        fetch(`http://localhost:3001/movies/info`)
+        fetch(`http://localhost:3001/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
-            dispatch({type: "GET_MOVIES_INFO", payload: data})
+            dispatch({ type: "GET_MOVIE_INFO", payload: data})
         })
-        .catch()
     }
 }
+
+// export const getMoviesInfo = () => {
+//     return(dispatch) => {
+//         fetch(`http://localhost:3001/movies/info`)
+//         .then(res => res.json())
+//         .then(data => {
+//             dispatch({type: "GET_MOVIES_INFO", payload: data})
+//         })
+//         .catch()
+//     }
+// }
 
 export const deleteMovie = (movieId) => {
     return(dispatch) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { searchMovie, getMoviesInfo } from '../../redux/actions/movieActions';
+import { searchMovie } from '../../redux/actions/movieActions';
 import { addMovie } from '../../redux/actions/movieActions';
 
 import SearchResults from '../../components/search-results/search-results.component';
@@ -26,7 +26,7 @@ import { SearchResultsContainer } from './search.styles'
         e.preventDefault()
         if (this.state.title.length > 0){
         this.props.searchMovie(this.state.title)
-        this.props.getMoviesInfo()
+        // this.props.getMoviesInfo()
         this.setState({
             title: '',
             error: null 
@@ -49,7 +49,7 @@ import { SearchResultsContainer } from './search.styles'
                     />
                 </form>
                 <SearchResultsContainer>
-                    <SearchResults addMovie={this.props.addMovie} searchedMovies={this.props.searchedMovies} />
+                    <SearchResults addMovie={this.props.addMovie} searchedMovies={this.props.searchedMovies} moviesInfo={this.props.moviesInfo}/>
                 </SearchResultsContainer>
             </div>
         )
@@ -63,7 +63,6 @@ const mapStateToProps = ({ searchedMovies }) => ({
 
 const mapDispatchToProps = {
     searchMovie,
-    getMoviesInfo,
     addMovie
 }
 

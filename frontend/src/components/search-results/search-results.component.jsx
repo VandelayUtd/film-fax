@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {  ResultCard, ButtonContainer, TextArea, Details } from './search-results.styles';
 
-const SearchResults = ({ searchedMovies, addMovie }) => {
+const SearchResults = ({ searchedMovies, moviesInfo, addMovie }) => {
+
+    useEffect(() => {
+        getMoviesInfo()
+    }, [])    
+
+    const handleInfo = () => {
+        console.log(moviesInfo)
+    }
 
     
     return (
@@ -17,7 +25,7 @@ const SearchResults = ({ searchedMovies, addMovie }) => {
                             </TextArea>
                             <br/>
                             <ButtonContainer>
-                                <button>info</button>
+                                <button onClick={handleInfo} >info</button>
                                 <button onClick={()=> addMovie(movie)}>add</button>
                             </ButtonContainer>
                         </div>

@@ -12,10 +12,6 @@ class GetSearchDetailsJob < ApplicationJob
 
   def perform(movies_array)
     # Do something later
-    get_movie_details(movies_array)
-  end
- 
-  def get_movie_details(movies_array)
     details = movies_array.map do |movie|
         response =  RestClient.get "https://imdb-api.com/en/API/Title/#{API_KEY}/#{movie["id"]}"
         JSON.parse(response.body)
@@ -25,6 +21,9 @@ class GetSearchDetailsJob < ApplicationJob
     #     movie_object
     end
     details
+    
   end
+ 
+
 
 end

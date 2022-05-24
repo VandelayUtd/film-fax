@@ -32,13 +32,21 @@ class MoviesController < ApplicationController
     end
 
     def search
-        searched_movies = MovieCreator.new(params).get_search_results
-        render json: searched_movies
+        @searched_movies = MovieCreator.new(params).get_search_results
+        @movies_info = GetSearchDetailsJob.perform_later(@searched_movies)
+        respond_to do |format| 
+            format.json {render :json => {
+                :searched_movies => @searched_movies,
+                :movies_info => @movies_info
+            }}
+        end
     end
 
     def info 
-        movies_info = GetSearchDetailsJob.perform_later(searched_movies)
-        render json: movies_info
+        # movies_info = GetSearchDetailsJob.perform_later(searched_movies)
+        # render json: movies_info
+        movie_info = MovieCreator.new(params).get_movie
+        render json: movie_info
     end
 
     def delete 
