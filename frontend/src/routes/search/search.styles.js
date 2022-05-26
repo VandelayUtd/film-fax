@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SearchResultsContainer = styled.div`
-    background-color: #000000;
+    background-color: #222222;
     padding: 2rem;
     margin-right: 4rem;
     margin-left: 4rem;

@@ -33,7 +33,9 @@ class MoviesController < ApplicationController
 
     def search
         searched_movies = MovieCreator.new(params).get_search_results
-        SearchDetails.new(searched_movies)
+        # SearchDetails.new(searched_movies)
+       
+        # GetSearchDetailsJob.perform_later(searched_movies)
         render json: searched_movies
     end
 

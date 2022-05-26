@@ -23,7 +23,7 @@ module Backend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.active_job.queue_adapter = :sidekiq
+    config.active_job.queue_adapter = :resque
 
 
     # Configuration for the application, engines, and railties goes here.
