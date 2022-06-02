@@ -11,7 +11,8 @@ const SearchResults = ({ searchedMovies, fullDetails, addMovie, getDetails }) =>
 
     const handleInfo = (movieId) => {
 
-        const movieDetails = fullDetails.find(movie => movie.id === movieId)
+        const movieDetails = fullDetails
+        // .find(movie => movie.id === movieId)
         console.log(movieDetails)
 
     }
