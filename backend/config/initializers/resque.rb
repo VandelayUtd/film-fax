@@ -1,4 +1,4 @@
-require 'redis/server'
+require 'resque/server'
 
 if Rails.env.development?
     Resque.redis = Redis.new(host: 'localhost', port: '6379')
