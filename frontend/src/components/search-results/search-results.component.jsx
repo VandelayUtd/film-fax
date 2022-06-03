@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-// import { getDetails } from '../../redux/actions/movieActions';
+// import { getInfo } from '../../redux/actions/movieActions';
 import {  ResultCard, ButtonContainer, TextArea, Details } from './search-results.styles';
 
-const SearchResults = ({ searchedMovies, fullDetails, addMovie, getDetails }) => {
+const SearchResults = ({ searchedMovies, getInfo, addMovie }) => {
 
 
     // useEffect(() => {
@@ -10,11 +10,8 @@ const SearchResults = ({ searchedMovies, fullDetails, addMovie, getDetails }) =>
     // }, [])    
 
     const handleInfo = (movieId) => {
-
-        const movieDetails = fullDetails
-        // .find(movie => movie.id === movieId)
-        console.log(movieDetails)
-
+        console.log('hit')
+       getInfo(movieId)
     }
 
     

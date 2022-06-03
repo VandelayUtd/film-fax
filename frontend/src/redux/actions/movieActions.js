@@ -57,15 +57,18 @@ export const getDetails = () => {
 }
 
 
-// export const getInfo = (movieId) => {
-//     return(dispatch) => {
-//         fetch(`http://localhost:3001/movies/info/${movieId}`)
-//         .then(res => res.json())
-//         .then(data => {
-//             dispatch({ type: "GET_MOVIE_INFO", payload: data})
-//         })
-//     }
-// }
+export const getInfo = (movieId) => {
+    console.log(movieId)
+    return(dispatch) => {
+        fetch(`http://localhost:3001/movies/info/${movieId}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            dispatch({ type: "GET_MOVIE_INFO", payload: data})
+        })
+        .catch()
+    }
+}
 
 // export const getMoviesInfo = () => {
 //     return(dispatch) => {

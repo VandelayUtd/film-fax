@@ -1,4 +1,4 @@
-function searchReducer( state = { all: [], fullDetails: []}, action){
+function searchReducer( state = { all: [], fullDetails: [], movieInfo: []}, action){
     switch(action.type) {
         case "SEARCH_MOVIES": 
             return {...state, 
@@ -9,6 +9,11 @@ function searchReducer( state = { all: [], fullDetails: []}, action){
             return{...state,
             fullDetails: action.payload
             }
+
+        case "GET_MOVIE_INFO":
+                return {...state,
+                movieInfo: action.payload
+                }
 
         default: 
             return state

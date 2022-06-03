@@ -13,8 +13,9 @@ class SearchDetails
 
     def self.get_details
         if self.all.length > 0
+            
             self.all.last.map do |movie|
-                MovieCreator.new(movie).get_movie
+                MovieCreator.new(movie)
             end
         end
     end

@@ -33,15 +33,17 @@ class MoviesController < ApplicationController
 
     def search
         searched_movies = MovieCreator.new(params).get_search_results
-        # SearchDetails.new(searched_movies)
+        # SearchDetails.new()
        
-        GetSearchDetailsJob.perform_later()
+        # GetSearchDetailsJob.perform_now(searched_movies)
         render json: searched_movies
     end
 
     def info 
-        full_details = SearchDetails.get_details
-        render json: full_details
+        
+        puts "testing"
+        movie_info = MovieCreator.new(params).get_movie
+        render json: movie_info
     end
 
     def delete 
