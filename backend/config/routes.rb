@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   # resources :get_movies
   resources :searched_movies
-  resources :full_details
   resources :movie_info
   resources :movies
 

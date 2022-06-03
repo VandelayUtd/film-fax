@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getMovies, deleteMovie } from './redux/actions/movieActions';
 
 import Home from './routes/home/home.component';
-import MovieIndex from './components/movie-index/movie-index.component';
+import MovieList from './routes/movie-list/movie-list.component';
 import Search from './routes/search/search.component';
 import Nav from './components/nav/navbar.component';
 
@@ -22,7 +22,7 @@ class App extends Component {
         <Routes>
           <Route path='/' element={<Nav />}>
             <Route index element={<Home/>}/>
-            <Route path='/movies' element={<MovieIndex movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
+            <Route path='/movies' element={<MovieList movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
             <Route path='/movies/new' element={<Search />}/>
           </Route>
         </Routes>

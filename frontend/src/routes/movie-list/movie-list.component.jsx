@@ -1,10 +1,10 @@
 import React from 'react'
-import MovieCard from '../movie-card/movie-card.component'
+import MovieCard from '../../components/movie-card/movie-card.component'
 
-import { MovieContainer, Title, MovieGrid } from './movie-index.styles';
+import { MovieContainer, Title, MovieGrid } from './movie-list.styles';
 
 
-const MovieIndex = ({movies, deleteMovie}) => {
+const MovieList = ({movies, deleteMovie}) => {
         return (
             <>
                 <MovieContainer>
@@ -24,4 +24,4 @@ const MovieIndex = ({movies, deleteMovie}) => {
             </>
         );
 };
-export default MovieIndex;
+export default MovieList;
