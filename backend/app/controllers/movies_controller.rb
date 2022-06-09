@@ -32,6 +32,7 @@ class MoviesController < ApplicationController
     end
 
     def search
+        # add error handling 
         searched_movies = MovieCreator.new(params).get_search_results
         render json: searched_movies
     end

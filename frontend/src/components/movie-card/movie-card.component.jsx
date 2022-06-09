@@ -7,7 +7,7 @@ import MovieCardBack from '../movie-card-back/movie-card-back.component';
 
 const MovieCard = ({movie, deleteMovie}) => {
 
-    const [show, setShow]=useState(false);
+    const [show, setShow] = useState(false);
 
     const handleDelete = (e) => {
         deleteMovie(movie.id)
