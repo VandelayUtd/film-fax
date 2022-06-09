@@ -1,13 +1,8 @@
-function searchReducer( state = { all: [], fullDetails: [], movieInfo: []}, action){
+function searchReducer( state = { all: [], movieInfo: []}, action){
     switch(action.type) {
         case "SEARCH_MOVIES": 
             return {...state, 
             all: action.payload
-            }
-
-        case "GET_DETAILS":
-            return{...state,
-            fullDetails: action.payload
             }
 
         case "GET_MOVIE_INFO":

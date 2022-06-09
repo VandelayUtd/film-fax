@@ -25,7 +25,6 @@ class MovieCreator
     def get_search_results 
         response =  RestClient.get "https://imdb-api.com/en/API/SearchMovie/#{API_KEY}/#{@movie["q"].gsub(" ", "%20")}"
         movie_array = JSON.parse(response.body)["results"]
-        
         movie_array
         # get_details(movie_array)
     end

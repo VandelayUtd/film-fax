@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 // import { getInfo } from '../../redux/actions/movieActions';
-import {  ResultCard, ButtonContainer, TextArea, Details } from './search-results.styles';
+import {  ResultCard, ButtonContainer, TextArea} from './search-results.styles';
 
 const SearchResults = ({ searchedMovies, getInfo, addMovie }) => {
 
@@ -11,7 +11,7 @@ const SearchResults = ({ searchedMovies, getInfo, addMovie }) => {
 
     const handleInfo = (movieId) => {
         console.log('hit')
-       getInfo(movieId)
+        getInfo(movieId)
     }
 
     
