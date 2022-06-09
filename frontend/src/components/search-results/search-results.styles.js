@@ -27,7 +27,7 @@ export const TextArea = styled.div`
         font-weight: 500;
         float: left;
         text-align: left;
-        font-family: 'Fira Sans';
+        font-family: 'Fira Sans', serif;
         margin-left: .75em;
     }
 `

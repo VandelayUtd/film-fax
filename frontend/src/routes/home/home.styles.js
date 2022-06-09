@@ -5,7 +5,7 @@ export const HomeContainer = styled.div`
 `
 export const Title = styled.h1`
     text-align: center;
-    font-family: 'Poiret One';
+    font-family: 'Tiro Devanagari Marathi', serif;
     color: white;
     font-size: 100px;
 `
