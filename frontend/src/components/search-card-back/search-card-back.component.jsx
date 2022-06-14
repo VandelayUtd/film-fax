@@ -1,8 +1,7 @@
-import { Details } from './search-result-info-card.styles'
+import { Details } from './search-card-back.styles'
 
-import './search-result-info-card.styles'
 
-const SearchResultInfoCart = ({ movie }) => {
+const SearchCardBack = ({ movie }) => {
 
     return (
         <>
@@ -22,4 +21,4 @@ const SearchResultInfoCart = ({ movie }) => {
     )
 }
 
-export default SearchResultInfoCart
+export default SearchCardBack

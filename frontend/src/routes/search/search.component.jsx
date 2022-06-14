@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { searchMovie, getInfo } from '../../redux/actions/movieActions';
 import { addMovie } from '../../redux/actions/movieActions';
 
-import SearchResults from '../../components/search-results/search-results.component';
+import SearchCard from '../../components/search-card/search-card.component';
 import SearchInput from '../../components/search-input/search-input.component'
 
 import { SearchResultsContainer } from './search.styles'
@@ -48,7 +48,19 @@ import { SearchResultsContainer } from './search.styles'
                     />
                 </form>
                 <SearchResultsContainer>
-                    <SearchResults addMovie={this.props.addMovie} searchedMovies={this.props.searchedMovies} getDetails={this.props.getDetails} getInfo={this.props.getInfo} />
+                    {   this.props.searchedMovies.length > 0 ?
+                        this.props.searchedMovies.map(movie => (
+
+                            <SearchCard
+                                key={movie.id} 
+                                movie={movie} 
+                                addMovie={this.props.addMovie}
+                                getInfo={this.props.getInfo} 
+                            />
+                ))
+                        : 
+                        null 
+                }
                 </SearchResultsContainer>
             </div>
         )

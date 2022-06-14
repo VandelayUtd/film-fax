@@ -12,3 +12,4 @@ export const SearchResultsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 `
+
