@@ -7,7 +7,7 @@ function searchReducer( state = { all: [], movieInfo: []}, action){
 
         case "GET_MOVIE_INFO":
                 return {...state,
-                movieInfo: action.payload
+                movieInfo: [...state.movieInfo, action.payload]
                 }
 
         default: 

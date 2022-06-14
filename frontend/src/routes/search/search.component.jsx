@@ -55,7 +55,8 @@ import { SearchResultsContainer } from './search.styles'
                                 key={movie.id} 
                                 movie={movie} 
                                 addMovie={this.props.addMovie}
-                                getInfo={this.props.getInfo} 
+                                getInfo={this.props.getInfo}
+                                movieInfo={this.props.movieInfo} 
                             />
                 ))
                         : 

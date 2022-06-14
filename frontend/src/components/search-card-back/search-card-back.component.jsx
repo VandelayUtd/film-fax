@@ -1,7 +1,7 @@
 import { Details } from './search-card-back.styles'
 
 
-const SearchCardBack = ({ movie }) => {
+const SearchCardBack = ({ movie, handleInfo, addMovie }) => {
 
     return (
         <>
