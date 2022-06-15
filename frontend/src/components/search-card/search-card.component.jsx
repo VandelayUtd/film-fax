@@ -6,13 +6,26 @@ import {  ResultCard } from './search-card.styles';
 const SearchCard = ({ movie, getInfo, addMovie, movieInfo }) => {
 
     const [showInfo, setShowInfo] = useState(false)
+    const [currentMovie, setCurrentMovie] = useState(null)
 
     //write a function to itterate through movieInfo array to check if the specified movie already has its correlated info in state
+    // const checkStateForMovie = (movieId) => {
+    //     movieInfo.find(movie => movie.id === movieId)
+    // }
 
     const handleInfo = (movieId) => {
         // use function from above here 
-        getInfo(movieId)
-        setShowInfo(!showInfo)
+        // const movie = movieInfo.find(movie => movie.id === movieId)
+        // if (movie) {
+        //     console.log(movie)
+        //     setCurrentMovie(movie)
+        //     setShowInfo(!showInfo)
+        // } else {
+            getInfo(movieId)
+            console.log(movieInfo)
+            setCurrentMovie(movieInfo[movieInfo.length-1])
+            setShowInfo(!showInfo)
+        // }
     }
 
     
@@ -24,7 +37,7 @@ const SearchCard = ({ movie, getInfo, addMovie, movieInfo }) => {
                     )
                     :
                     (
-                        <SearchCardBack movie={movie} handleInfo={handleInfo} addMovie={addMovie} movieInfo={movieInfo} />
+                        <SearchCardBack movie={currentMovie} handleInfo={handleInfo} addMovie={addMovie} movieInfo={movieInfo} />
                     )
                 }
             </ResultCard>

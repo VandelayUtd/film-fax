@@ -4,7 +4,7 @@ import { Card } from './movie-card-back.styles'
 
 const MovieCardBack = ({movie, handleToggle}) => {
 
-
+    console.log(movie)
     return (
         <Card >
                 <div onClick={handleToggle}>
