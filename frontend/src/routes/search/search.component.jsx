@@ -43,7 +43,7 @@ import { SearchResultsContainer } from './search.styles'
                         onChange={this.handleChange} 
                         name='title'
                         type='text'
-                        value={this.state.value}
+                        value={this.state.title}
                         label='Search'    
                     />
                 </form>
