@@ -1,12 +1,15 @@
 import { Details } from './search-card-back.styles'
 
 
-const SearchCardBack = ({currentMovie, handleInfo, addMovie }) => {
+const SearchCardBack = ({movie, handleInfo, addMovie }) => {
+
     
     console.log(movie)
     return (
         <>
-            {/* <Details >
+
+            
+            <Details >
                 <span>Directed by {movie.directors}</span>
                 <br/>
                 <span>Rated: {movie.contentRating}</span>
@@ -17,7 +20,7 @@ const SearchCardBack = ({currentMovie, handleInfo, addMovie }) => {
             <div>
                 <h3>"{movie.tagline}"</h3>
                 <p>{movie.plot}</p>
-            </div>  */}
+            </div> 
         </>
     )
 }

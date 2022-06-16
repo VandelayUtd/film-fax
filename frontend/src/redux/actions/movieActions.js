@@ -38,7 +38,6 @@ export const searchMovie = (movieTitle) => {
         fetch(`http://localhost:3001/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
-            console.log(movieData)
             dispatch({type: "SEARCH_MOVIES", payload: movieData})
         })
         .catch()
