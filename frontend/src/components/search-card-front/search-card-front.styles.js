@@ -21,16 +21,23 @@ export const TextArea = styled.div`
     }
 `
 
+
 export const ButtonContainer = styled.div`
 
-    justify-content: space-between;
+    ${'' /* justify-content: space-between; */}
+    margin-left: 8px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    float: left;
 
     button {
-        text-size: 2em;
+        font-size: .8em;
+        font-weight: bold;
+        font-family: 'Fira Sans';
         width: 8em;
-        margin: .5em;
-        padding: 1em;
-        border-radius: 4px;
+        margin: .2em;
+        padding: .6em;
+        ${'' /* border-radius: 4px; */}
         border: 1px solid orange; 
     }
 `
