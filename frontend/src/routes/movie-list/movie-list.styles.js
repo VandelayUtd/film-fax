@@ -6,7 +6,7 @@ import styled from 'styled-components';
 // `
 
 export const Title = styled.div`
-    font-family: 'Poiret One';
+    font-family: 'Tiro Devanagari Marathi', serif;
     color: white;
     font-size: 4rem;
     padding: 2rem;  
@@ -18,7 +18,8 @@ export const MovieContainer = styled.div`
     margin-left: 4rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    border-radius: 25px; 
+    border-radius: 25px;
+    padding-bottom: 16px; 
 
 `
 

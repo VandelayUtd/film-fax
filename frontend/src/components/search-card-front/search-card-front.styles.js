@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Poster = styled.img`
+        border-radius: 4px;
+        border: 1px solid orange; 
+`
+
 export const TextArea = styled.div`
 
     align-items: left;
@@ -8,9 +13,10 @@ export const TextArea = styled.div`
     span { 
         font-size: 1.3em;
         font-weight: 500;
+        color: #00cc8f;
         float: left;
         text-align: left;
-        font-family: 'Fira Sans', serif;
+        font-family: 'Fira Sans';
         margin-left: .75em;
     }
 `

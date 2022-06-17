@@ -9,11 +9,16 @@ export const NavLink = styled(Link)`
     padding: 10px 15px;
     background: white;
     color: black;
-    font-size: 1rem;
+    font-size: .7rem;
     margin: .25em;
     padding: .5em .75em;
     cursor: pointer;
     text-decoration: none;
+
+    &:hover {
+        color: #00cc8f;
+
+    }
 `
 
 export const NavContainer = styled.div`

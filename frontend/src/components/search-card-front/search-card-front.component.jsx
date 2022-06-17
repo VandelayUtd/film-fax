@@ -1,4 +1,4 @@
-import { TextArea, ButtonContainer } from './search-card-front.styles'
+import { TextArea, ButtonContainer, Poster } from './search-card-front.styles'
 
 const SearchCardFront = ({ movie, handleInfo, addMovie}) => {
 
