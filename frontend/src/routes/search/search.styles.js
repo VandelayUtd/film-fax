@@ -10,6 +10,7 @@ export const SearchResultsContainer = styled.div`
     border-radius: 4px; 
     display: flex;
     flex-wrap: wrap;
+ 
     justify-content: center;
 `
 

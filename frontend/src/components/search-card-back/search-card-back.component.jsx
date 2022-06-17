@@ -1,4 +1,4 @@
-import { Details } from './search-card-back.styles'
+import { Details, ButtonContainer } from './search-card-back.styles'
 
 
 const SearchCardBack = ({movie, handleInfo, addMovie }) => {
@@ -20,7 +20,11 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
             <div>
                 <h3>"{movie.tagline}"</h3>
                 <p>{movie.plot}</p>
-            </div> 
+            </div>
+            <ButtonContainer>
+                    <button onClick={()=> handleInfo(movie.id)} >info</button>
+                    <button onClick={()=> addMovie(movie)}>add</button>
+            </ButtonContainer> 
         </>
     )
 }

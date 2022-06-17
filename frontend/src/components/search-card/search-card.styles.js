@@ -7,7 +7,8 @@ export const ResultCard = styled.div`
     border-radius: 10px;
     display: grid;
     background-color: grey;
-    align-items: center; 
+    align-items: center;
+    max-width: 347px; 
 
     img {
         border-radius: 15px;
