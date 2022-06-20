@@ -9,9 +9,9 @@ const Nav = () => {
         <>
             <NavContainer>
                 
-                <NavLink to="/"><FontAwesomeIcon icon={faFilm} font-size='28px' /> <br/>HOME</NavLink>
-                <NavLink to="/movies"><FontAwesomeIcon icon={faClapperboard} font-size='28px'/><br/>MOVIES</NavLink>
-                <NavLink to="/movies/new"><FontAwesomeIcon icon={faUserSecret} font-size='28px'/><br/>Search</NavLink>
+                <NavLink to="/"><FontAwesomeIcon icon={faFilm} fontSize='28px' /> <br/>HOME</NavLink>
+                <NavLink to="/movies"><FontAwesomeIcon icon={faClapperboard} fontSize='28px'/><br/>MOVIES</NavLink>
+                <NavLink to="/movies/new"><FontAwesomeIcon icon={faUserSecret} fontSize='28px'/><br/>Search</NavLink>
             </NavContainer>
             <LineA />
             <LineB />

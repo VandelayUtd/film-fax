@@ -5,6 +5,7 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
 
     
     console.log(movie)
+    console.log(movie.fullCast.others)
     return (
         <>
             <Container>

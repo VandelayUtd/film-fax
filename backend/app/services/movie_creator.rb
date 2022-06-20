@@ -14,7 +14,7 @@ class MovieCreator
 
     
     def get_movie
-        response =  RestClient.get "https://imdb-api.com/en/API/Title/#{API_KEY}/#{@movie["id"]}"
+        response =  RestClient.get "https://imdb-api.com/en/API/Title/#{API_KEY}/#{@movie["id"]}/FullCast"
 
         movie_object = JSON.parse(response.body)
         
