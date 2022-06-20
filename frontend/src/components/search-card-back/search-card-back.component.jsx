@@ -4,8 +4,6 @@ import { Details, ButtonContainer, Container, Title } from './search-card-back.s
 const SearchCardBack = ({movie, handleInfo, addMovie }) => {
 
     
-    console.log(movie)
-    console.log(movie.fullCast.others)
     return (
         <>
             <Container>
@@ -25,6 +23,11 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                     <span>Genres: {movie.genres}</span>
                     <span>Languages: {movie.languages}</span>
                     <span>iMDb Rating: {movie.imDbRating}</span>
+                    { movie.fullCast ? 
+                        <span>Cinematography by: {movie.fullCast.others[2].items[0].name}</span>
+                    :
+                    null
+                    }
                 </Details>
                 <div>
                     { movie.tagline ? 
