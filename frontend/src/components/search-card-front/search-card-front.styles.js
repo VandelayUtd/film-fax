@@ -39,5 +39,13 @@ export const ButtonContainer = styled.div`
         padding: .6em;
         ${'' /* border-radius: 4px; */}
         border: 1px solid orange; 
+
+        &:hover {
+                color: white;
+                background: orange;
+                border: 1px solid white;      
+        }
     }
+
+    
 `
