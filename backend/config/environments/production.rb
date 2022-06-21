@@ -56,6 +56,9 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "backend_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { 
+    host: 'https://film-fax.herokuapp.com/'
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
