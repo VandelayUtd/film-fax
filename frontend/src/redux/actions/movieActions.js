@@ -2,7 +2,7 @@
 
 export const getMovies = () => {
     return (dispatch) => {
-        fetch('http://localhost:3001/movies')
+        fetch('https://film-fax.herokuapp.com/movies')
         .then(res => res.json())
         .then(movies => {
             dispatch({ type: "FETCH_MOVIES_SUCCESS", payload: movies})
@@ -15,7 +15,7 @@ export const getMovies = () => {
 export const addMovie = (movie) => {
     return (dispatch) => {
         
-        fetch('http://localhost:3001/movies',{
+        fetch('https://film-fax.herokuapp.com/movies',{
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
@@ -35,7 +35,7 @@ export const addMovie = (movie) => {
 
 export const searchMovie = (movieTitle) => {
     return(dispatch) => {
-        fetch(`http://localhost:3001/movies/search?q=${movieTitle}`)
+        fetch(`https://film-fax.herokuapp.com/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
             dispatch({type: "SEARCH_MOVIES", payload: movieData})
@@ -49,7 +49,7 @@ export const searchMovie = (movieTitle) => {
 export const getInfo = (movieId) => {
     console.log(movieId)
     return(dispatch) => {
-        fetch(`http://localhost:3001/movies/info/${movieId}`)
+        fetch(`https://film-fax.herokuapp.com/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -62,7 +62,7 @@ export const getInfo = (movieId) => {
 
 export const deleteMovie = (movieId) => {
     return(dispatch) => {
-        fetch(`http://localhost:3001/movies/${movieId}`, {
+        fetch(`https://film-fax.herokuapp.com/movies/${movieId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
