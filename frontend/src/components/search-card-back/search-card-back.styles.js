@@ -60,3 +60,12 @@ export const ButtonContainer = styled.div`
         }
     }
 `
+
+export const SimilarContainer = styled.div`
+    float: right;
+`
+export const Similar = styled.li`
+    font-family: 'Fira Sans';
+    font-size: 16px;
+    color: #00cc8f;
+`

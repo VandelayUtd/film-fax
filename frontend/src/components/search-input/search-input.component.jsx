@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchBar, SearchButton, SearchInputLabel } from './search-input.styles';
+import { SearchBar, SearchButton } from './search-input.styles';
 
 const SearchInput = ({ handleChange, value, ...otherProps }) => {
 
