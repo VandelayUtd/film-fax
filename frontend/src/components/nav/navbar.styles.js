@@ -25,6 +25,10 @@ export const NavContainer = styled.div`
     background: white;
     display: flex;
     justify-content: center;
+    position: fixed;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 `
 
 export const LineA = styled.hr`
