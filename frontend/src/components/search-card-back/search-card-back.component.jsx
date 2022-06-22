@@ -38,7 +38,7 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                     }
                     <p>{movie.plot}</p>
                 </div>
-                <SimilarContainer>
+                {/* <SimilarContainer>
                     <ul>
                         { movie.similars ? 
                             movie.similars.map(similar => (
@@ -51,7 +51,7 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                             <span>this movie is one of a kind</span>
                         }
                     </ul>
-                </SimilarContainer>
+                </SimilarContainer> */}
 
             </Container>
         </>

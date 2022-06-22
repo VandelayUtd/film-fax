@@ -2,23 +2,30 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     display: grid;
-    grid-template-columns: 360px 200px 200px ;
-    justify-content: flex-start;
+    grid-template-columns: 290px;
+    justify-content: center;
     text-align: left;
     margin-right: 4rem;
 
     p {
         color: white;
+        margin-left: 2rem;
+    }
+
+    @media screen and (max-width: 800px) {
+        grid-template-rows: auto;
+        max-width: 780px;
     }
 `
 
 export const Details = styled.div`
-margin-top: 4rem;
+margin-top: 1rem;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
 text-align: left;
-margin-right: 4rem;
+margin-left: 2rem;
+${'' /* margin-right: 4rem; */}
 color: white;
 
 
@@ -28,9 +35,13 @@ color: white;
     }
 
     a {
-        color: white;
+        color: orange;
         font-family: 'Fira Sans';
-        decoration: none;
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 `
 
