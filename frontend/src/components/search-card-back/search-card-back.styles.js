@@ -26,6 +26,12 @@ color: white;
         font-size: 2em;
         margin-bottom: 2px;
     }
+
+    a {
+        color: white;
+        font-family: 'Fira Sans';
+        decoration: none;
+    }
 `
 
 export const Title = styled.div`

@@ -1,21 +1,59 @@
 import React from 'react'
-import { Card } from './movie-card-back.styles'
+import { Container, Details, Title, ButtonContainer, SimilarContainer, Similar } from './movie-card-back.styles'
 
 
 const MovieCardBack = ({movie, handleToggle}) => {
 
     console.log(movie)
     return (
-        <Card >
-                <div onClick={handleToggle}>
-                    <img src={movie.image} alt={movie.title}/>
-                    <span>Release Date: {movie.release_date}</span>
-                    <span >Directed by {movie.director}</span>
-                    <span>Starring {movie.stars}</span>
+        <>
+            <Container>
+                <div>
+                    <img  src={movie.image} alt='movie poster' />
+                     <Title>{movie.title}</Title>
+                    <ButtonContainer>
+                        <button onClick={()=> handleToggle} >info</button>
+                    </ButtonContainer> 
+                </div>
+                <Details >
+                    <span>Directed by {movie.directors}</span>
+                    <br/>
+                    <span>Rated: {movie.contentRating}</span>
+                    <span>Staring: {movie.stars}</span>
                     <span>Genres: {movie.genres}</span>
+                    <span>Languages: {movie.languages}</span>
+                    <span>iMDb Rating: {movie.imDbRating}</span>
+                    { movie.fullCast ? 
+                        <span>Cinematography by: {movie.fullCast.others[2].items[0].name}</span>
+                    :
+                    null
+                    }
+                </Details>
+                <div>
+                    { movie.tagline ? 
+                        <h3>"{movie.tagline}"</h3>
+                        :
+                        null
+                    }
                     <p>{movie.plot}</p>
                 </div>
-        </Card>
+                <SimilarContainer>
+                    <ul>
+                        { movie.similars ? 
+                            movie.similars.map(similar => (
+    
+                                <Similar>{similar.title}
+                                    <button>info</button>
+                                </Similar>
+                            ))
+                            :
+                            <span>this movie is one of a kind</span>
+                        }
+                    </ul>
+                </SimilarContainer>
+
+            </Container>
+        </>
     )
 }
 

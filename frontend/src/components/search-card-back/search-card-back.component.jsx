@@ -28,6 +28,7 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                     :
                     null
                     }
+                    <a href={`https://www.imdb.com/title/${movie.id}/technical`} target='_blank' rel='noopener noreferrer'>Technical Specs</a>
                 </Details>
                 <div>
                     { movie.tagline ? 
