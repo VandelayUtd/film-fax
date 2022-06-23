@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
         movie.release_date = created_movie["releaseDate"]
         movie.director = created_movie["directors"]
         movie.api_id = created_movie["id"]
-        movie.dp = created_movie[fullCast.others[2].items[0].name]
+        movie.dp = created_movie["fullCast"]["others"][2]["items"][0]["name"]
         # movie.dp_name = created_movie["dp"]["items"][0]["name"]
         # movie.dp_id = created_movie["dp"]["items"][0]["id"]
 
