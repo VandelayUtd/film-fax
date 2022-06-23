@@ -9,7 +9,7 @@ export const Card = styled.div`
     
 
     img { 
-        height: 280px;
+        height: 300px;
         object-fit: contain;
         border-radius: 4px;
         ${'' /* transition: 0s height; */}

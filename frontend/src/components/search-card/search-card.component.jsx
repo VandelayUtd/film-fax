@@ -17,13 +17,12 @@ const SearchCard = ({ movie, getInfo, addMovie, movieInfo }) => {
     return (
         <>
             <ResultCard key={movie.id}>
-                { !showInfo ? (
-                        <SearchCardFront movie={movie} handleInfo={handleInfo} addMovie={addMovie} />
-                    )
-                    :
+                <SearchCardFront movie={movie} handleInfo={handleInfo} addMovie={addMovie} />
+                { showInfo ? 
                     (
                         <SearchCardBack movie={movie} handleInfo={handleInfo} addMovie={addMovie} movieInfo={movieInfo} />
-                    )
+                    ) :
+                    null
                 }
             </ResultCard>
         </>

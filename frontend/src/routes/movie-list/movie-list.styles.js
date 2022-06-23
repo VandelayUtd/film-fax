@@ -26,6 +26,7 @@ export const MovieContainer = styled.div`
 export const MovieGrid = styled.div`
     justify-content: center;
     display: grid;
+    margin: 20px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 250px));  
     ${'' /* background-color: #111111; */}
     

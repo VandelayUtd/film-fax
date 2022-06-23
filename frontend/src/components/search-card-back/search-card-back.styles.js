@@ -1,12 +1,19 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    position: absolute;
+  
+  @media screen and (min-width: 801px) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+  }
+
     margin: 1em;
     z-index: 10;
     display: grid;
-    grid-template-columns: 350px;
-    padding: 10px;
+    grid-template-columns: 350px 200px;
     align-items: center;
     justify-content: center;
     text-align: left;
@@ -31,7 +38,10 @@ export const Container = styled.div`
 
     @media screen and (max-width: 800px) {
         grid-template-rows: auto;
+        grid-template-columns: auto;
         max-width: 780px;
+        padding: 10px;
+
     }
 `
 
