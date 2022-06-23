@@ -6,7 +6,11 @@ export const Container = styled.div`
     margin: 1em;
     z-index: 10;
     display: grid;
-    grid-template-columns: 350px 200px;
+    grid-template-columns: 380px 260px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "cover details"
+    "cover plot"
     align-items: center;
     justify-content: center;
     text-align: left;
@@ -16,13 +20,7 @@ export const Container = styled.div`
     transition: 200ms ease-in-out;
 
 
-    img {
-        ${'' /* border-radius: 15px; */}
-        margin: .75rem; 
-        height: 30rem;
-        border: 1px solid orange;
-        max-width: 347px; 
-    }
+
 
     p {
         color: white;
@@ -45,8 +43,24 @@ export const Container = styled.div`
     }
 `
 
+export const Cover = styled.div`
+
+        grid-area: 1 / 1 / 3 / 2;
+        margin: 8px;
+
+        img {
+        ${'' /* border-radius: 15px; */}
+        margin: .75rem; 
+        height: 30rem;
+        border: 1px solid orange;
+        width: 360px;
+        height: auto 
+    }
+`
+
 export const Details = styled.div`
-margin-top: 1rem;
+grid-area: 1 / 2 / 2 / 3;
+margin-top: 3rem;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -103,6 +117,11 @@ export const ButtonContainer = styled.div`
                 border: 1px solid white;      
         }
     }
+`
+
+export const Plot = styled.div`
+    grid-area: 2 / 2 / 3 / 3;
+
 `
 
 export const SimilarContainer = styled.div`

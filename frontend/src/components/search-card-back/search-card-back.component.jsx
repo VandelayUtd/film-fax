@@ -1,4 +1,4 @@
-import { Details, ButtonContainer, Container, Title, Overlay, Similar, SimilarContainer } from './search-card-back.styles'
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer } from './search-card-back.styles'
 
 
 const SearchCardBack = ({movie, handleInfo, addMovie }) => {
@@ -7,14 +7,14 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
     return (
         <>
             <Container>
-                <div>
+                <Cover>
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
                         <button onClick={()=> handleInfo(movie.id)} >close</button>
                         <button onClick={()=> addMovie(movie)}>add</button>
                     </ButtonContainer> 
-                </div>
+                </Cover>
                 <Details >
                     <span>Directed by {movie.directors}</span>
                     <br/>
@@ -35,14 +35,9 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                     }
                     <a href={`https://www.imdb.com/title/${movie.id}/technical`} target='_blank' rel='noopener noreferrer'>Technical Specs</a>
                 </Details>
-                <div>
-                    { movie.tagline ? 
-                        <h3>"{movie.tagline}"</h3>
-                        :
-                        null
-                    }
+                <Plot>
                     <p>{movie.plot}</p>
-                </div>
+                </Plot>
                 {/* <SimilarContainer>
                     <ul>
                         { movie.similars ? 
