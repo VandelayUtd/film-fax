@@ -11,7 +11,7 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
-                        <button onClick={()=> handleInfo(movie.id)} >info</button>
+                        <button onClick={()=> handleInfo(movie.id)} >close</button>
                         <button onClick={()=> addMovie(movie)}>add</button>
                     </ButtonContainer> 
                 </div>

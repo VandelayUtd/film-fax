@@ -1,17 +1,20 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    position: relative;
+    position: absolute;
     margin: 1em;
     z-index: 10;
     display: grid;
     grid-template-columns: 350px;
+    padding: 10px;
     align-items: center;
     justify-content: center;
     text-align: left;
     border: 2px #00cc8f solid;
     background-color: black;
     border-radius: 10px;
+    transition: 200ms ease-in-out;
+
 
     img {
         ${'' /* border-radius: 15px; */}
@@ -23,7 +26,7 @@ export const Container = styled.div`
 
     p {
         color: white;
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
     @media screen and (max-width: 800px) {
@@ -38,7 +41,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 text-align: left;
-margin-left: 2rem;
+margin-left: 1rem;
 ${'' /* margin-right: 4rem; */}
 color: white;
 
@@ -109,4 +112,6 @@ export const Overlay = styled.div`
     bottom: 0;
     background-color: rgba(0, 0, 0, .6);
     pointer-events: all;
+    transition: 200ms ease-in-out;
+
 `
