@@ -1,11 +1,25 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+    position: relative;
+    margin: 1em;
+    z-index: 10;
     display: grid;
-    grid-template-columns: 290px;
+    grid-template-columns: 350px;
+    align-items: center;
     justify-content: center;
     text-align: left;
-    margin-right: 4rem;
+    border: 2px #00cc8f solid;
+    background-color: black;
+    border-radius: 10px;
+
+    img {
+        ${'' /* border-radius: 15px; */}
+        margin: .75rem; 
+        height: 30rem;
+        border: 1px solid orange;
+        max-width: 347px; 
+    }
 
     p {
         color: white;
@@ -85,4 +99,14 @@ export const Similar = styled.li`
     font-family: 'Fira Sans';
     font-size: 16px;
     color: #00cc8f;
+`
+
+export const Overlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    pointer-events: all;
 `

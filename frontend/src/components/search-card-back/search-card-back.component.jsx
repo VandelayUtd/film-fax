@@ -1,4 +1,4 @@
-import { Details, ButtonContainer, Container, Title, Similar, SimilarContainer } from './search-card-back.styles'
+import { Details, ButtonContainer, Container, Title, Overlay, Similar, SimilarContainer } from './search-card-back.styles'
 
 
 const SearchCardBack = ({movie, handleInfo, addMovie }) => {
@@ -52,8 +52,8 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                         }
                     </ul>
                 </SimilarContainer> */}
-
             </Container>
+            <Overlay />
         </>
     )
 }

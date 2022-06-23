@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+
+
     display: grid;
     grid-template-columns: 360px 200px 200px ;
     justify-content: flex-start;
