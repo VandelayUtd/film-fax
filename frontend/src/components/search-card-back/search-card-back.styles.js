@@ -2,13 +2,6 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   
-  @media screen and (min-width: 801px) {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-  }
 
     margin: 1em;
     z-index: 10;
@@ -34,6 +27,13 @@ export const Container = styled.div`
     p {
         color: white;
         margin-left: 1rem;
+    }
+
+    @media screen and (min-width: 801px) {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     @media screen and (max-width: 800px) {
