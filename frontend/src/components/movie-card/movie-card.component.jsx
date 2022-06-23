@@ -4,6 +4,7 @@ import MovieCardFront from '../movie-card-front/movie-card-front.component';
 // import { Card, Title, Image, Footer, Button} from './movie-card.styles';
 import MovieCardBack from '../movie-card-back/movie-card-back.component';
 
+import SearchCardBack from '../search-card-back/search-card-back.component';
 
 const MovieCard = ({movie, deleteMovie}) => {
 
@@ -28,10 +29,10 @@ const MovieCard = ({movie, deleteMovie}) => {
                         handleToggle={handleToggle} 
                     />
                 ) : (
-                    <MovieCardBack 
+                    <SearchCardBack 
                         movie={movie}
                         handleDelete={handleDelete} 
-                        handleToggle={handleToggle} 
+                        handleInfo={handleToggle} 
                     />
                 )
             }
