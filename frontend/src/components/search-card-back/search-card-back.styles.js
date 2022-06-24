@@ -25,9 +25,13 @@ export const Container = styled.div`
 
     @media screen and (max-width: 800px) {
         ${'' /* grid-template-rows: auto; */}
-        grid-template-columns: 340px;
+        grid-template-columns: 325px;
+        width: 330px;
         grid-template-rows: auto;
         padding: 10px;
+        position: inherit;
+        transform: translate(4%, -65%);
+        margin-bottom: -650px;
 
     }
 `
@@ -37,18 +41,21 @@ export const Cover = styled.div`
     @media screen and (min-width: 801px) {
         grid-area: 1 / 1 / 3 / 2;
         margin-bottom: .75rem;
-
-    }
         img {
         margin: .75rem; 
         border: 1px solid orange;
         width: 380px;
-        height: auto 
+        height: auto; 
         }
+
+    }
 
     @media screen and (max-width: 800px) {
         img {
             width: 320px;
+            height: auto;
+            border:1px solid orange;
+
         }
     }
 

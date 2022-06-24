@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const SearchResultsContainer = styled.div`
-    background-color: #222222;
+
+    @media screen and (min-width: 801px) {
+        background-color: #222222;
+    }
+
     padding: 2rem;
     margin-right: 4rem;
     margin-left: 4rem;
