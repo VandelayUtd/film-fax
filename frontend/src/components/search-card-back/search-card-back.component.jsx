@@ -3,6 +3,7 @@ import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Simil
 
 const SearchCardBack = ({movie, handleInfo, addMovie }) => {
 
+    console.log(movie)
     
     return (
         <>
@@ -17,8 +18,10 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                 </Cover>
                 <Details >
                     <span>Directed by {movie.directors}</span>
+                    <span>{movie.year}</span>
                     <br/>
                     <span>Rated: {movie.contentRating}</span>
+                    <span>Runtime: {movie.runtimeStr}</span>
                     <span>Staring: {movie.stars}</span>
                     <span>Genres: {movie.genres}</span>
                     <span>Languages: {movie.languages}</span>
@@ -38,9 +41,12 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                         :
                         null
                     }
-                    <a href={`https://www.imdb.com/title/${movie.id}/technical`} target='_blank' rel='noopener noreferrer'>Technical Specs</a>
+                    <a href={`https://www.imdb.com/title/${movie.id}/technical`} target='_blank' rel='noopener noreferrer'>
+                        <button>Technical Specs</button>
+                    </a>
                 </Details>
                 <Plot>
+                <h3>Summary</h3>
                     <p>{movie.plot}</p>
                 </Plot>
                 {/* <SimilarContainer>

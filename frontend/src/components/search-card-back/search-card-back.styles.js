@@ -3,14 +3,10 @@ import styled from "styled-components"
 export const Container = styled.div`
   
 
-    margin: 1em;
     z-index: 10;
     display: grid;
-    grid-template-columns: 380px 260px;
+    grid-template-columns: 390px 260px;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-    "cover details"
-    "cover plot"
     align-items: center;
     justify-content: center;
     text-align: left;
@@ -19,13 +15,6 @@ export const Container = styled.div`
     border-radius: 10px;
     transition: 200ms ease-in-out;
 
-
-
-
-    p {
-        color: white;
-        margin-left: 1rem;
-    }
 
     @media screen and (min-width: 801px) {
         position: fixed;
@@ -46,29 +35,48 @@ export const Container = styled.div`
 export const Cover = styled.div`
 
         grid-area: 1 / 1 / 3 / 2;
-        margin: 8px;
+        margin-bottom: .75rem;
 
         img {
         ${'' /* border-radius: 15px; */}
         margin: .75rem; 
-        height: 30rem;
         border: 1px solid orange;
-        width: 360px;
+        width: 380px;
         height: auto 
     }
 `
 
 export const Details = styled.div`
 grid-area: 1 / 2 / 2 / 3;
-margin-top: 3rem;
+margin-left: 1rem;
+padding-right: .5rem;
+margin-right: .75rem;
+margin-bottom: -3rem;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
 text-align: left;
-margin-left: 1rem;
 ${'' /* margin-right: 4rem; */}
 color: white;
 
+    button {
+        color: #F24236;
+        font-size: .8em;
+        font-weight: bold;
+        font-family: 'Fira Sans';
+        ${'' /* width: 8em; */}
+        margin: 1em;
+        padding: 8px;
+        ${'' /* border-radius: 4px; */}
+        border: 1px solid orange;
+        margin-left: 0; 
+
+        &:hover {
+                color: white;
+                background: #F24236;
+                border: 1px solid white;      
+        }
+    }
 
     h2 {
         font-size: 2em;
@@ -121,6 +129,21 @@ export const ButtonContainer = styled.div`
 
 export const Plot = styled.div`
     grid-area: 2 / 2 / 3 / 3;
+    margin-top: -1rem;
+
+    h3 {
+        color: white;
+        margin-left: 1rem;
+        font-family: 'Fira Sans';
+        font-weight: 400;
+        margin-bottom: -.5rem;
+    }
+
+    p {
+        color: white;
+        margin-left: 1rem;
+        margin-right: .75rem;
+    }
 
 `
 
