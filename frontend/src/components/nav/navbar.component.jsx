@@ -11,7 +11,7 @@ const Nav = () => {
                 
                 <NavLink to="/"><FontAwesomeIcon icon={faFilm} fontSize='28px' /> <br/>HOME</NavLink>
                 <NavLink to="/movies"><FontAwesomeIcon icon={faClapperboard} fontSize='28px'/><br/>MOVIES</NavLink>
-                <NavLink to="/movies/new"><FontAwesomeIcon icon={faUserSecret} fontSize='28px'/><br/>Search</NavLink>
+                <NavLink to="/movies/new"><FontAwesomeIcon icon={faUserSecret} fontSize='28px'/><br/>SEARCH</NavLink>
             </NavContainer>
             <LineA />
             <LineB />
