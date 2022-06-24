@@ -29,9 +29,10 @@ export const Container = styled.div`
         width: 330px;
         grid-template-rows: auto;
         padding: 10px;
-        position: inherit;
-        transform: translate(4%, -65%);
-        margin-bottom: -650px;
+        margin-bottom: 10px;
+        ${'' /* position: inherit; */}
+        ${'' /* transform: translate(4%, -65%); */}
+        ${'' /* margin-bottom: -650px; */}
 
     }
 `
