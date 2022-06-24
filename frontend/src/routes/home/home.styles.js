@@ -8,4 +8,7 @@ export const Title = styled.h1`
     font-family: 'Tiro Devanagari Marathi', serif;
     color: white;
     font-size: 100px;
+    @media screen and (max-width: 800px) {
+        font-size: 45px;
+    }
 `
