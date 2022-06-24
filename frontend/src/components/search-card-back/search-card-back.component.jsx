@@ -23,6 +23,11 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                     <span>Genres: {movie.genres}</span>
                     <span>Languages: {movie.languages}</span>
                     <span>iMDb Rating: {movie.imDbRating}</span>
+                    {movie.ratings ? 
+                            <span>Rotten Tomatoes Rating: {movie.ratings.rottenTomatoes}%</span>
+                        : 
+                        null
+                    }
                     { movie.fullCast ?
                         <span>Cinematography by: {movie.fullCast.others[2].items[0].name ? movie.fullCast.others[2].items[0].name : null }</span>
                         :
