@@ -24,9 +24,9 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 800px) {
+        ${'' /* grid-template-rows: auto; */}
+        grid-template-columns: 340px;
         grid-template-rows: auto;
-        grid-template-columns: auto;
-        max-width: 780px;
         padding: 10px;
 
     }
@@ -34,20 +34,38 @@ export const Container = styled.div`
 
 export const Cover = styled.div`
 
+    @media screen and (min-width: 801px) {
         grid-area: 1 / 1 / 3 / 2;
         margin-bottom: .75rem;
 
+    }
         img {
-        ${'' /* border-radius: 15px; */}
         margin: .75rem; 
         border: 1px solid orange;
         width: 380px;
         height: auto 
+        }
+
+    @media screen and (max-width: 800px) {
+        img {
+            width: 320px;
+        }
     }
+
+    
 `
 
 export const Details = styled.div`
-grid-area: 1 / 2 / 2 / 3;
+
+@media screen and (min-width: 801px) {
+    grid-area: 1 / 2 / 2 / 3;
+
+}
+
+@media screen and (max-width: 800px) {
+    margin-bottom: 1rem;
+}
+
 margin-left: 1rem;
 padding-right: .5rem;
 margin-right: .75rem;
@@ -128,8 +146,12 @@ export const ButtonContainer = styled.div`
 `
 
 export const Plot = styled.div`
-    grid-area: 2 / 2 / 3 / 3;
-    margin-top: -1rem;
+
+    @media screen and (min-width: 801px) {
+        grid-area: 2 / 2 / 3 / 3;
+        margin-top: -1rem;
+
+    }
 
     h3 {
         color: white;
@@ -157,6 +179,8 @@ export const Similar = styled.li`
 `
 
 export const Overlay = styled.div`
+
+@media screen and (min-width: 801px) {
     position: fixed;
     top: 0;
     left: 0;
@@ -165,5 +189,6 @@ export const Overlay = styled.div`
     background-color: rgba(0, 0, 0, .6);
     pointer-events: all;
     transition: 200ms ease-in-out;
+}
 
 `
