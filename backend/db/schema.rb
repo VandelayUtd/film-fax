@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_144040) do
     t.string "rotten_tomatoes_rating"
     t.string "tech_specs"
     t.string "runtime"
-    t.text "similars", default: [], array: true
+    t.string "similars", default: [], array: true
   end
 
 end

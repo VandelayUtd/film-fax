@@ -1,60 +1,70 @@
-import React from 'react'
-import { Container, Details, Title, ButtonContainer, SimilarContainer, Similar } from './movie-card-back.styles'
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer } from './movie-card-back.styles'
 
 
-const MovieCardBack = ({movie, handleToggle}) => {
+const MovieCardBack = ({movie, handleInfo, addMovie }) => {
 
-    console.log(movie)
+    // const similar = JSON.parse(movie.similars[0])
+
+    const similarMovies = movie.similars.map(
+        movie => movie 
+    )
+
+    console.log(similarMovies[0].id)
+    
     return (
         <>
             <Container>
-                <div>
+                <Cover>
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
-                        <button onClick={()=> handleToggle} >info</button>
+                        <button onClick={()=> handleInfo(movie.id)} >close</button>
+                        <button onClick={()=> addMovie(movie)}>add</button>
                     </ButtonContainer> 
-                </div>
+                </Cover>
                 <Details >
-                    <span>Directed by {movie.directors}</span>
+                    <span>Directed by {movie.director}</span>
+                    <span>{movie.release_date}</span>
                     <br/>
                     <span>Rated: {movie.contentRating}</span>
+                    <span>Runtime: {movie.runtime}</span>
                     <span>Staring: {movie.stars}</span>
                     <span>Genres: {movie.genres}</span>
                     <span>Languages: {movie.languages}</span>
                     <span>iMDb Rating: {movie.imDbRating}</span>
-                    { movie.fullCast ? 
-                        <span>Cinematography by: {movie.fullCast.others[2].items[0].name}</span>
-                    :
-                    null
-                    }
+                    <span>Rotten Tomatoes Rating: {movie.rotten_tomatoes_rating}%</span>
+                    <span>Director of Photography: {movie.dp}</span>
+                    <a href={`https://www.imdb.com/title/${movie.id}/technical`} target='_blank' rel='noopener noreferrer'>
+                        <button>Technical Specs</button>
+                    </a>
                 </Details>
-                <div>
-                    { movie.tagline ? 
-                        <h3>"{movie.tagline}"</h3>
-                        :
-                        null
-                    }
-                    <p>{movie.plot}</p>
-                </div>
-                <SimilarContainer>
+                <Plot>
+                <h3>Summary</h3>
+                    <p>{ movie.plot && movie.plot.length > 250 ? 
+                            `${movie.plot.substring(0, 250)}...`
+                        : movie.plot
+                        }
+                    </p>
+                </Plot>
+                {/* <SimilarContainer>
                     <ul>
                         { movie.similars ? 
                             movie.similars.map(similar => (
     
                                 <Similar>{similar.title}
-                                    <button>info</button>
+                                    <button onClick={()=> handleInfo(similar.id)}>info</button>
                                 </Similar>
                             ))
                             :
                             <span>this movie is one of a kind</span>
                         }
                     </ul>
-                </SimilarContainer>
-
+                </SimilarContainer> */}
             </Container>
+            <Overlay />
         </>
     )
 }
 
 export default MovieCardBack
+

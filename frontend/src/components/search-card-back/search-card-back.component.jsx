@@ -47,7 +47,11 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                 </Details>
                 <Plot>
                 <h3>Summary</h3>
-                    <p>{movie.plot}</p>
+                    <p>{ movie.plot && movie.plot.length > 250 ? 
+                            `${movie.plot.substring(0, 250)}...`
+                        : movie.plot
+                        }
+                    </p>
                 </Plot>
                 {/* <SimilarContainer>
                     <ul>

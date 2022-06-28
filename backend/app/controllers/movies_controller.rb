@@ -25,9 +25,8 @@ class MoviesController < ApplicationController
         movie.runtime = created_movie["runtimeStr"]
         movie.rotten_tomatoes_rating = created_movie["ratings"]["rottenTomatoes"]
         movie.similars = created_movie["similars"]
-        # movie.dp_name = created_movie["dp"]["items"][0]["name"]
-        # movie.dp_id = created_movie["dp"]["items"][0]["id"]
 
+        
         if movie.save 
             render json: movie, status: :created
         else 

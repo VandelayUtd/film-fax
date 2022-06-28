@@ -29,7 +29,7 @@ const MovieCard = ({movie, deleteMovie}) => {
                         handleToggle={handleToggle} 
                     />
                 ) : (
-                    <SearchCardBack 
+                    <MovieCardBack 
                         movie={movie}
                         handleDelete={handleDelete} 
                         handleInfo={handleToggle} 
