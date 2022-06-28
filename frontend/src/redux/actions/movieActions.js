@@ -1,8 +1,10 @@
 
+const devEnvRoot = 'http://127.0.0.1:3001/'
+const prodEnvRoot = 'https://film-fax.herokuapp.com/'
 
 export const getMovies = () => {
     return (dispatch) => {
-        fetch('https://film-fax.herokuapp.com/movies')
+        fetch(`${devEnvRoot}/movies`)
         .then(res => res.json())
         .then(movies => {
             dispatch({ type: "FETCH_MOVIES_SUCCESS", payload: movies})
@@ -15,7 +17,7 @@ export const getMovies = () => {
 export const addMovie = (movie) => {
     return (dispatch) => {
         
-        fetch('https://film-fax.herokuapp.com/movies',{
+        fetch(`${devEnvRoot}/movies`,{
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
@@ -35,7 +37,7 @@ export const addMovie = (movie) => {
 
 export const searchMovie = (movieTitle) => {
     return(dispatch) => {
-        fetch(`https://film-fax.herokuapp.com/movies/search?q=${movieTitle}`)
+        fetch(`${devEnvRoot}/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
             dispatch({type: "SEARCH_MOVIES", payload: movieData})
@@ -49,7 +51,7 @@ export const searchMovie = (movieTitle) => {
 export const getInfo = (movieId) => {
     console.log(movieId)
     return(dispatch) => {
-        fetch(`https://film-fax.herokuapp.com/movies/info/${movieId}`)
+        fetch(`${devEnvRoot}/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -62,7 +64,7 @@ export const getInfo = (movieId) => {
 
 export const deleteMovie = (movieId) => {
     return(dispatch) => {
-        fetch(`https://film-fax.herokuapp.com/movies/${movieId}`, {
+        fetch(`${devEnvRoot}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

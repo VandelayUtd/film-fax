@@ -1,4 +1,4 @@
-
+require 'json'
 
 class MoviesController < ApplicationController
 
@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
         movie.dp = created_movie["fullCast"]["others"][2]["items"][0]["name"]
         movie.runtime = created_movie["runtimeStr"]
         movie.rotten_tomatoes_rating = created_movie["ratings"]["rottenTomatoes"]
-        movie.similars = JSON.parse(created_movie["similars"])
+        movie.similars = created_movie["similars"].map{|movie| movie.to_json}
 
         
         if movie.save 

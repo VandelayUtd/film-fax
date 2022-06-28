@@ -3,12 +3,10 @@ import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Simil
 
 const MovieCardBack = ({movie, handleInfo, addMovie }) => {
 
-    // const similar = JSON.parse(movie.similars[0])
-    // const similarMovies = Object.keys(movie.similars).map(key=> ({
-    //    ...movie[key],
-    // }))
+    const similar = JSON.parse(movie.similars[0])
+    const similarMovies = movie.similars.map(movie => JSON.parse(movie))
 
-    console.log(movie.similars[0])
+    console.log(similarMovies)
     
     return (
         <>
@@ -45,10 +43,11 @@ const MovieCardBack = ({movie, handleInfo, addMovie }) => {
                         }
                     </p>
                 </Plot>
-                {/* <SimilarContainer>
+
+                <SimilarContainer>
                     <ul>
-                        { movie.similars ? 
-                            movie.similars.map(similar => (
+                        { similarMovies ? 
+                            similarMovies.map(similar => (
     
                                 <Similar>{similar.title}
                                     <button onClick={()=> handleInfo(similar.id)}>info</button>
@@ -58,7 +57,7 @@ const MovieCardBack = ({movie, handleInfo, addMovie }) => {
                             <span>this movie is one of a kind</span>
                         }
                     </ul>
-                </SimilarContainer> */}
+                </SimilarContainer>
             </Container>
             <Overlay />
         </>
