@@ -16,6 +16,17 @@ export const Container = styled.div`
         max-width: 347px; 
     }
 
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 325px;
+        width: 330px;
+        height: auto;
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+    }
+
 `
 
 export const Poster = styled.img`
