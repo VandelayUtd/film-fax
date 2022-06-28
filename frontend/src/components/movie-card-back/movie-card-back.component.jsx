@@ -4,12 +4,11 @@ import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Simil
 const MovieCardBack = ({movie, handleInfo, addMovie }) => {
 
     // const similar = JSON.parse(movie.similars[0])
+    // const similarMovies = Object.keys(movie.similars).map(key=> ({
+    //    ...movie[key],
+    // }))
 
-    const similarMovies = movie.similars.map(
-        movie => movie 
-    )
-
-    console.log(similarMovies[0].id)
+    console.log(movie.similars[0])
     
     return (
         <>
