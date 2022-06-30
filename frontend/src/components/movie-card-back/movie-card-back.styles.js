@@ -5,6 +5,7 @@ export const Container = styled.div`
 
     z-index: 10;
     display: grid;
+    grid-auto-rows: 1fr;
     grid-template-columns: 390px 260px 260px;
     grid-template-rows: 1fr 1fr;
     align-items: center;
@@ -18,6 +19,7 @@ export const Container = styled.div`
 
     @media screen and (min-width: 801px) {
         position: fixed;
+        max-height: 750px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -67,6 +69,7 @@ export const Details = styled.div`
 
 @media screen and (min-width: 801px) {
     grid-area: 1 / 2 / 2 / 3;
+    margin-top: 1rem;
 
 }
 
@@ -150,7 +153,26 @@ export const ButtonContainer = styled.div`
                 background: orange;
                 border: 1px solid white;      
         }
+    
+
     }
+`
+
+export const StyledButton = styled.button`
+        font-size: .8em;
+        font-weight: bold;
+        font-family: 'Fira Sans';
+        width: 6em;
+        margin: .2em;
+        padding: .6em;
+        border: 1px solid orange; 
+        text-align: center;
+
+        &:hover {
+                color: white;
+                background: orange;
+                border: 1px solid white;      
+        }
 `
 
 export const Plot = styled.div`
@@ -179,16 +201,30 @@ export const Plot = styled.div`
 
 export const SimilarContainer = styled.div`
 
-    @media and screen (min-width: 801px) {
+    @media screen and (min-width: 801px) {
         grid-area: 1 / 3 / 3 / 4;
-        justify-self: initial;
-        align-self: initial;
+        align-self: center;
+        justify-self: center;
+        padding-right: 1rem;
+        margin-left: -2rem;
     }
 `
 export const Similar = styled.li`
     font-family: 'Fira Sans';
-    font-size: 16px;
+    font-size: 14px;
     color: #00cc8f;
+    align-self: center;
+    list-style: none;
+    border: 1px #F24236 solid;
+    padding: 4px;
+    margin: 8px 0;
+
+    &:hover {
+        color: white;
+        background: orange;
+        border: 1px #00cc8f solid;
+        cursor: pointer;
+    }
 `
 
 export const Overlay = styled.div`

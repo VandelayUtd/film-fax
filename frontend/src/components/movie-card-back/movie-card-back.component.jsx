@@ -1,4 +1,4 @@
-import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer } from './movie-card-back.styles'
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
 
 
 const MovieCardBack = ({movie, handleToggle, addMovie }) => {
@@ -11,14 +11,16 @@ const MovieCardBack = ({movie, handleToggle, addMovie }) => {
     return (
         <>
             <Container>
+
                 <Cover>
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
-                        <button onClick={()=> handleToggle(movie.id)} >close</button>
-                        <button onClick={()=> addMovie(movie)}>add</button>
+                        <StyledButton onClick={()=> handleToggle(movie.id)} >close</StyledButton>
+                        <StyledButton onClick={()=> addMovie(movie)}>add</StyledButton>
                     </ButtonContainer> 
                 </Cover>
+
                 <Details >
                     <span>Directed by {movie.director}</span>
                     <span>{movie.release_date}</span>
@@ -35,8 +37,9 @@ const MovieCardBack = ({movie, handleToggle, addMovie }) => {
                         <button>Technical Specs</button>
                     </a>
                 </Details>
+
                 <Plot>
-                <h3>Summary</h3>
+                    <h3>Summary</h3>
                     <p>{ movie.plot && movie.plot.length > 250 ? 
                             `${movie.plot.substring(0, 250)}...`
                         : movie.plot
@@ -49,9 +52,7 @@ const MovieCardBack = ({movie, handleToggle, addMovie }) => {
                         { similarMovies ? 
                             similarMovies.map(similar => (
     
-                                <Similar>{similar.title}
-                                    <button>info</button>
-                                </Similar>
+                                <Similar>{similar.title}</Similar>
                             ))
                             :
                             <span>this movie is one of a kind</span>
