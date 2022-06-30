@@ -1,7 +1,7 @@
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer } from './movie-card-back.styles'
 
 
-const MovieCardBack = ({movie, handleInfo, addMovie }) => {
+const MovieCardBack = ({movie, handleToggle, addMovie }) => {
 
     const similar = JSON.parse(movie.similars[0])
     const similarMovies = movie.similars.map(movie => JSON.parse(movie))
@@ -15,7 +15,7 @@ const MovieCardBack = ({movie, handleInfo, addMovie }) => {
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
-                        <button onClick={()=> handleInfo(movie.id)} >close</button>
+                        <button onClick={()=> handleToggle(movie.id)} >close</button>
                         <button onClick={()=> addMovie(movie)}>add</button>
                     </ButtonContainer> 
                 </Cover>
@@ -50,7 +50,7 @@ const MovieCardBack = ({movie, handleInfo, addMovie }) => {
                             similarMovies.map(similar => (
     
                                 <Similar>{similar.title}
-                                    <button onClick={()=> handleInfo(similar.id)}>info</button>
+                                    <button>info</button>
                                 </Similar>
                             ))
                             :

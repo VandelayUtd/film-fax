@@ -5,7 +5,7 @@ export const Container = styled.div`
 
     z-index: 10;
     display: grid;
-    grid-template-columns: 390px 260px;
+    grid-template-columns: 390px 260px 260px;
     grid-template-rows: 1fr 1fr;
     align-items: center;
     justify-content: center;
@@ -178,7 +178,12 @@ export const Plot = styled.div`
 `
 
 export const SimilarContainer = styled.div`
-    float: right;
+
+    @media and screen (min-width: 801px) {
+        grid-area: 1 / 3 / 3 / 4;
+        justify-self: initial;
+        align-self: initial;
+    }
 `
 export const Similar = styled.li`
     font-family: 'Fira Sans';
