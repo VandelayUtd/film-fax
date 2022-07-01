@@ -177,15 +177,6 @@ export const Plot = styled.div`
 
 `
 
-export const SimilarContainer = styled.div`
-    float: right;
-`
-export const Similar = styled.li`
-    font-family: 'Fira Sans';
-    font-size: 16px;
-    color: #00cc8f;
-`
-
 export const Overlay = styled.div`
 
 @media screen and (min-width: 801px) {

@@ -6,10 +6,8 @@ export const Container = styled.div`
     display: grid;
     background-color: black;
     align-items: center;
-    ${'' /* max-width: 347px;  */}
 
     img {
-        ${'' /* border-radius: 15px; */}
         margin: .75rem; 
         height: 30rem;
         border: 1px solid orange;
@@ -55,7 +53,6 @@ export const TextArea = styled.div`
 
 export const ButtonContainer = styled.div`
 
-    ${'' /* justify-content: space-between; */}
     margin-left: 8px;
     margin-top: 2px;
     margin-bottom: 8px;
@@ -68,7 +65,6 @@ export const ButtonContainer = styled.div`
         width: 8em;
         margin: .2em;
         padding: .6em;
-        ${'' /* border-radius: 4px; */}
         border: 1px solid orange; 
 
         &:hover {

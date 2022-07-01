@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import SearchCardFront from '../search-card-front/search-card-front.component';
 import SearchCardBack from '../search-card-back/search-card-back.component';
 import {  ResultCard } from './search-card.styles';

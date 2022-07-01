@@ -1,4 +1,4 @@
-import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer } from './search-card-back.styles'
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from './search-card-back.styles'
 
 
 const SearchCardBack = ({movie, handleInfo, addMovie }) => {
@@ -53,20 +53,6 @@ const SearchCardBack = ({movie, handleInfo, addMovie }) => {
                         }
                     </p>
                 </Plot>
-                {/* <SimilarContainer>
-                    <ul>
-                        { movie.similars ? 
-                            movie.similars.map(similar => (
-    
-                                <Similar>{similar.title}
-                                    <button onClick={()=> handleInfo(similar.id)}>info</button>
-                                </Similar>
-                            ))
-                            :
-                            <span>this movie is one of a kind</span>
-                        }
-                    </ul>
-                </SimilarContainer> */}
             </Container>
             <Overlay />
         </>

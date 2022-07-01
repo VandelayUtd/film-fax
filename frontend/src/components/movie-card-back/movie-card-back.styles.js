@@ -26,16 +26,11 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 800px) {
-        ${'' /* grid-template-rows: auto; */}
         grid-template-columns: 325px;
         width: 330px;
         grid-template-rows: auto;
         padding: 10px;
         margin-bottom: 10px;
-        ${'' /* position: inherit; */}
-        ${'' /* transform: translate(4%, -65%); */}
-        ${'' /* margin-bottom: -650px; */}
-
     }
 `
 
@@ -85,7 +80,6 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 text-align: left;
-${'' /* margin-right: 4rem; */}
 color: white;
 
     button {
@@ -93,10 +87,8 @@ color: white;
         font-size: .8em;
         font-weight: bold;
         font-family: 'Fira Sans';
-        ${'' /* width: 8em; */}
         margin: 1em;
         padding: 8px;
-        ${'' /* border-radius: 4px; */}
         border: 1px solid orange;
         margin-left: 0; 
 
@@ -134,7 +126,6 @@ export const Title = styled.div`
 
 export const ButtonContainer = styled.div`
 
-    ${'' /* justify-content: space-between; */}
     margin-left: 8px;
     margin-top: 8px;
 
@@ -145,7 +136,6 @@ export const ButtonContainer = styled.div`
         width: 8em;
         margin: .2em;
         padding: .6em;
-        ${'' /* border-radius: 4px; */}
         border: 1px solid orange; 
 
         &:hover {

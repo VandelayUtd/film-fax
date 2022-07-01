@@ -1,12 +1,11 @@
-import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
+import { useSelector } from 'react-redux'
 
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
 
 const MovieCardBack = ({movie, handleToggle, addMovie }) => {
 
-    const similar = JSON.parse(movie.similars[0])
     const similarMovies = movie.similars.map(movie => JSON.parse(movie))
 
-    console.log(similarMovies)
     
     return (
         <>
@@ -33,8 +32,8 @@ const MovieCardBack = ({movie, handleToggle, addMovie }) => {
                     <span>iMDb Rating: {movie.imDbRating}</span>
                     <span>Rotten Tomatoes Rating: {movie.rotten_tomatoes_rating}%</span>
                     <span>Director of Photography: {movie.dp}</span>
-                    <a href={`https://www.imdb.com/title/${movie.id}/technical`} target='_blank' rel='noopener noreferrer'>
-                        <button>Technical Specs</button>
+                    <a href={`https://www.imdb.com/title/${movie.api_id}/technical`} target='_blank' rel='noopener noreferrer'>
+                        <button onClick={()=> console.log(movie)}>Technical Specs</button>
                     </a>
                 </Details>
 
@@ -52,7 +51,7 @@ const MovieCardBack = ({movie, handleToggle, addMovie }) => {
                         { similarMovies ? 
                             similarMovies.map(similar => (
     
-                                <Similar>{similar.title}</Similar>
+                                <Similar key={similar.id} >{similar.title}</Similar>
                             ))
                             :
                             <span>this movie is one of a kind</span>

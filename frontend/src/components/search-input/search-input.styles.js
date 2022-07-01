@@ -9,7 +9,6 @@ export const SearchBar = styled.input`
   font-size: 16px;
   font-family: 'Fira Sans' ;
   padding: 7px 7px 7px 5px;
-  ${'' /* width: 100%; */}
   border: none;
   border-radius: 0;
   border-bottom: 1px solid grey;
@@ -27,7 +26,6 @@ export const SearchButton = styled.input`
     width: 8em;
     margin: .2em;
     padding: .6em;
-    ${'' /* border-radius: 4px; */}
     border: 1px solid orange; 
 
     &:hover {

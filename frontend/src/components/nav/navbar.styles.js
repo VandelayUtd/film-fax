@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// const animateLoading = css`
-//     animation: nav-load
-// `
+
 
 export const NavLink = styled(Link)`
     padding: 10px 15px;

@@ -1,18 +1,14 @@
 import styled from 'styled-components'; 
 
 export const Card = styled.div`
-    ${'' /* width: 185px;
-    height: 300px; */}
     padding-top: 1rem; 
     background-color: #111111;
     transition: 0s background-color;
     
-
     img { 
         height: 300px;
         object-fit: contain;
         border-radius: 4px;
-        ${'' /* transition: 0s height; */}
     }
 
     button {
@@ -20,7 +16,6 @@ export const Card = styled.div`
         color: black;
         border: none;
         font-size: 1rem;
-        ${'' /* margin: .25em; */}
         padding: .5em .75em;
         cursor: pointer;
         transition: 0s background color;
@@ -52,10 +47,6 @@ export const Card = styled.div`
             transition-delay: 100ms;
         }
 
-        ${'' /* img{
-            height: 270px;
-            transition-delay: 100ms;
-        } */}
     }
 
 
