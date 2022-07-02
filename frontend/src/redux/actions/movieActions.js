@@ -54,8 +54,20 @@ export const getInfo = (movieId) => {
         fetch(`${devEnvRoot}/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             dispatch({ type: "GET_MOVIE_INFO", payload: data})
+        })
+        .catch()
+    }
+}
+
+export const getSimilarInfo = (movieId) => {
+    console.log(movieId)
+    return(dispatch) => {
+        fetch(`${devEnvRoot}/movies/info/${movieId}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            dispatch({ type: "GET_SIMILAR_INFO", payload: data})
         })
         .catch()
     }

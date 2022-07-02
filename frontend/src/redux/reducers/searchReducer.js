@@ -1,4 +1,4 @@
-function searchReducer( state = { all: []}, action){
+function searchReducer( state = { all: [], similar: ''}, action){
     switch(action.type) {
         case "SEARCH_MOVIES": 
             return {...state, 
@@ -14,6 +14,11 @@ function searchReducer( state = { all: []}, action){
                     return movie;
                 }
                 )
+                }
+
+        case "GET_SIMILAR_INFO":
+                return {...state,
+                    similar: action.payload
                 }
 
         default: 

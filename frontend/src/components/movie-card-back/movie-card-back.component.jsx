@@ -11,11 +11,6 @@ const MovieCardBack = ({movie, handleToggle, addMovie, setSimilar, showSimilar})
     const similarMovie = useSelector( state => state.movies.all)
     const dispatch = useDispatch();
 
-    const setAndShowSimilar = (movieId) => {
-        const movie = dispatch(getInfo(movieId))
-        setSimilar(movie)
-        showSimilar(true)
-    }
 
 
     return (
@@ -62,7 +57,7 @@ const MovieCardBack = ({movie, handleToggle, addMovie, setSimilar, showSimilar})
                         { similarMovies ? 
                             similarMovies.map(similar => (
     
-                                <Similar key={similar.id} onClick={()=> setAndShowSimilar(similar.id)} >{similar.title}</Similar>
+                                <Similar key={similar.id} onClick={()=> setSimilar(similar.id)} >{similar.title}</Similar>
                             ))
                             :
                             <span>this movie is one of a kind</span>
