@@ -1,12 +1,23 @@
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { getInfo } from '../../redux/actions/movieActions'
 
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
 
-const MovieCardBack = ({movie, handleToggle, addMovie }) => {
+const MovieCardBack = ({movie, handleToggle, addMovie, setSimilar, showSimilar}) => {
 
     const similarMovies = movie.similars.map(movie => JSON.parse(movie))
 
-    
+    const similarMovie = useSelector( state => state.movies.all)
+    const dispatch = useDispatch();
+
+    const setAndShowSimilar = (movieId) => {
+        const movie = dispatch(getInfo(movieId))
+        setSimilar(movie)
+        showSimilar(true)
+    }
+
+
     return (
         <>
             <Container>
@@ -51,7 +62,7 @@ const MovieCardBack = ({movie, handleToggle, addMovie }) => {
                         { similarMovies ? 
                             similarMovies.map(similar => (
     
-                                <Similar key={similar.id} >{similar.title}</Similar>
+                                <Similar key={similar.id} onClick={()=> setAndShowSimilar(similar.id)} >{similar.title}</Similar>
                             ))
                             :
                             <span>this movie is one of a kind</span>
