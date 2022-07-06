@@ -1,9 +1,13 @@
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from './search-card-back.styles'
 
 
-const SearchCardBack = ({movie, addMovie, handleClose }) => {
+const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
 
-    console.log(movie)
+    const addMovieAndClose = (movie) => {
+        addMovie(movie)
+        setShowInfo(false)
+    }
+
     
     return (
         <>
@@ -12,8 +16,8 @@ const SearchCardBack = ({movie, addMovie, handleClose }) => {
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
-                        <button onClick={()=> handleClose(false)}>close</button>
-                        <button onClick={()=> addMovie(movie)}>add</button>
+                        <button onClick={()=> setShowInfo(false)}>close</button>
+                        <button onClick={()=> addMovieAndClose(movie)}>add</button>
                     </ButtonContainer> 
                 </Cover>
                 <Details >

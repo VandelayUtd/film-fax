@@ -27,12 +27,6 @@ export const Container = styled.div`
 
 `
 
-export const Poster = styled.img`
-        border-radius: 4px;
-        border: 1px solid orange; 
-
-        
-`
 
 export const TextArea = styled.div`
 
