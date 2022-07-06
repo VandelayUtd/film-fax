@@ -6,7 +6,7 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
     const addMovieAndClose = (movie) => {
         console.log(movie)
         addMovie(movie)
-        setShowInfo(false)
+        setShowInfo()
     }
 
     
@@ -17,7 +17,7 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
                     <img  src={movie.image} alt='movie poster' />
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
-                        <button onClick={()=> setShowInfo(false)}>close</button>
+                        <button onClick={()=> setShowInfo()}>close</button>
                         <button onClick={()=> addMovieAndClose(movie)}>add</button>
                     </ButtonContainer> 
                 </Cover>

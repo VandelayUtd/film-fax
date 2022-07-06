@@ -32,6 +32,7 @@ const MovieCard = ({ movie }) => {
     const handleAdd = (movie) => {
         dispatch(addMovie(movie))
     }
+    
 
 
     return (
