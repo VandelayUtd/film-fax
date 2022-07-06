@@ -12,14 +12,13 @@ const SearchCard = ({ movie, getInfo, addMovie, movieInfo }) => {
         setShowInfo(!showInfo)
     }
 
-
     
     return (
         <>
             <ResultCard key={movie.id}>
                 { showInfo ? 
                     (
-                        <SearchCardBack movie={movie} handleInfo={handleInfo} addMovie={addMovie} movieInfo={movieInfo} />
+                        <SearchCardBack movie={movie} handleInfo={handleInfo} addMovie={addMovie} movieInfo={movieInfo} handleClose={setShowInfo} />
                     ) : (
 
                         <SearchCardFront movie={movie} handleInfo={handleInfo} addMovie={addMovie} />
