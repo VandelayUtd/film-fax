@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getMovies, deleteMovie } from './redux/actions/movieActions';
+import { getMovies } from './redux/actions/movieActions';
 
 import Home from './routes/home/home.component';
 import MovieList from './routes/movie-list/movie-list.component';
@@ -22,7 +22,7 @@ class App extends Component {
         <Routes>
           <Route path='/' element={<Nav />}>
             <Route index element={<Home/>}/>
-            <Route path='/movies' element={<MovieList movies={this.props.movies} deleteMovie={this.props.deleteMovie}/>}/>
+            <Route path='/movies' element={<MovieList movies={this.props.movies} />}/>
             <Route path='/movies/new' element={<Search />}/>
           </Route>
         </Routes>
@@ -34,8 +34,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({movies: state.movies.all})
 
 const mapDispatchToProps = {
-  getMovies,
-  deleteMovie
+  getMovies
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

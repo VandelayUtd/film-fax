@@ -4,6 +4,7 @@ import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from
 const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
 
     const addMovieAndClose = (movie) => {
+        console.log(movie)
         addMovie(movie)
         setShowInfo(false)
     }

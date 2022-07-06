@@ -1,15 +1,11 @@
 import { useSelector,useDispatch } from 'react-redux'
-import { useEffect, useState } from 'react'
-import { getInfo } from '../../redux/actions/movieActions'
+
 
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
 
-const MovieCardBack = ({movie, handleToggle, addMovie, setSimilar, showSimilar}) => {
+const MovieCardBack = ({movie, handleToggle, setSimilar, handleDelete, showSimilar}) => {
 
     const similarMovies = movie.similars.map(movie => JSON.parse(movie))
-
-    const similarMovie = useSelector( state => state.movies.all)
-    const dispatch = useDispatch();
 
 
 
@@ -22,7 +18,7 @@ const MovieCardBack = ({movie, handleToggle, addMovie, setSimilar, showSimilar})
                      <Title>{movie.title}</Title>
                     <ButtonContainer>
                         <StyledButton onClick={()=> handleToggle(movie.id)} >close</StyledButton>
-                        <StyledButton onClick={()=> addMovie(movie)}>add</StyledButton>
+                        <StyledButton onClick={()=> handleDelete(movie.id)}>remove</StyledButton>
                     </ButtonContainer> 
                 </Cover>
 

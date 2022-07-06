@@ -11,7 +11,7 @@ const MovieCardFront = ({movie, handleDelete, handleToggle}) => {
                 <div>{movie.title}</div>
                 <Footer>
                     <button onClick={handleToggle}>info</button>
-                    <button onClick={handleDelete}>delete</button>
+                    <button onClick={()=> handleDelete(movie.id)}>delete</button>
             </Footer>
         </Card>
     );

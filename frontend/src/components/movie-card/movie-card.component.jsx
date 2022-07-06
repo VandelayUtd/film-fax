@@ -1,19 +1,19 @@
 import React, { Fragment, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addMovie, getInfo, getSimilarInfo } from '../../redux/actions/movieActions';
+import { addMovie, getSimilarInfo, deleteMovie } from '../../redux/actions/movieActions';
 import MovieCardFront from '../movie-card-front/movie-card-front.component';
 import MovieCardBack from '../movie-card-back/movie-card-back.component';
 import SearchCardBack from '../search-card-back/search-card-back.component';
 
-const MovieCard = ({movie, deleteMovie}) => {
+const MovieCard = ({ movie }) => {
 
     const [show, setShow] = useState(false);
     const [showSimilar, setShowSimilar] = useState(false);
     const dispatch = useDispatch()
     const similar = useSelector(state => state.searchedMovies.similar)
 
-    const handleDelete = (e) => {
-        deleteMovie(movie.id)
+    const handleDelete = (movieId) => {
+        dispatch(deleteMovie(movieId))
     }
 
     const handleToggle = () => {
@@ -29,6 +29,10 @@ const MovieCard = ({movie, deleteMovie}) => {
         setShowSimilar(!showSimilar)
     }
 
+    const handleAdd = (movie) => {
+        dispatch(addMovie(movie))
+    }
+
 
     return (
         <Fragment>
@@ -37,8 +41,8 @@ const MovieCard = ({movie, deleteMovie}) => {
                 showSimilar ? (
                     <SearchCardBack 
                         movie={similar}
-                        addMovie={dispatch(addMovie)}
-                        handleInfo={()=> setShowSimilar(!showSimilar)}
+                        addMovie={handleAdd}
+                        setShowInfo={()=> setShowSimilar(!showSimilar)}
                     />
                 ) : show ? (
                     <MovieCardBack 

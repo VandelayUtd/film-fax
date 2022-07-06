@@ -4,7 +4,7 @@ import MovieCard from '../../components/movie-card/movie-card.component'
 import { MovieContainer, Title, MovieGrid } from './movie-list.styles';
 
 
-const MovieList = ({movies, deleteMovie}) => {
+const MovieList = ({movies}) => {
         return (
             <>
                 <MovieContainer>
@@ -15,7 +15,6 @@ const MovieList = ({movies, deleteMovie}) => {
                             <MovieCard 
                                 movie={movie} 
                                 key={movie.id} 
-                                deleteMovie={deleteMovie}
                             />
                         )
                     }
