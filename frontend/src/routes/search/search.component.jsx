@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Cube } from 'styled-loaders-react'
+import { Bars } from 'react-loader-spinner'
 import { connect } from 'react-redux';
 
 import { searchMovie, getInfo } from '../../redux/actions/movieActions';
@@ -35,8 +35,9 @@ import { SearchResultsContainer } from './search.styles';
         }
     }
 
-
+    
     render() {
+        console.log(this.props.loading)
         return (
             <> 
                 <div>
@@ -49,9 +50,9 @@ import { SearchResultsContainer } from './search.styles';
                             label='Search'    
                         />
                     </form>
-                    { this.props.searchedMovies.loading ? 
+                    { this.props.loading ?
 
-                        <Cube />
+                    <Bars color='red' />
                         :
                         <SearchResultsContainer>
                             {   this.props.searchedMovies.length > 0 ?

@@ -1,14 +1,17 @@
 function searchReducer( state = { all: [], similar: ''}, action){
     switch(action.type) {
-        case "SEARCH_MOVIES": 
-            return {...state, 
-            all: action.payload
-            }
 
         case "MOVIES_LOADING":
             return {...state,
                 loading: true
             }
+
+        case "SEARCH_MOVIES": 
+            return {...state, 
+            all: action.payload,
+            loading: false
+            }
+
 
         case "GET_MOVIE_INFO":
                 return {...state,

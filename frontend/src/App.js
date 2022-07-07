@@ -7,6 +7,8 @@ import Home from './routes/home/home.component';
 import MovieList from './routes/movie-list/movie-list.component';
 import Search from './routes/search/search.component';
 import Nav from './components/nav/navbar.component';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 
 import './App.css';
 
