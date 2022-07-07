@@ -24,8 +24,14 @@ const MovieCard = ({ movie }) => {
         setShowSimilar(!showSimilar)
     }
 
-    const handleSelectSimilar = (id) => {
-        dispatch(getSimilarInfo(id))
+    const handleSelectSimilar = async id => {
+        console.log("1")
+        await new Promise((resolve, reject)=> {
+            dispatch(getSimilarInfo(id))
+            resolve()
+            console.log("2")
+        })
+        console.log("3")
         setShowSimilar(!showSimilar)
     }
 
@@ -51,7 +57,7 @@ const MovieCard = ({ movie }) => {
                         handleDelete={handleDelete} 
                         handleToggle={handleToggle} 
                         showSimilar={handleSimilar}
-                        setSimilar={handleSelectSimilar}
+                        handleSelectSimilar={handleSelectSimilar}
                     /> 
                 ) : (
                     <MovieCardFront 

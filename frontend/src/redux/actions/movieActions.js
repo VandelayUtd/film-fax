@@ -37,12 +37,15 @@ export const addMovie = (movie) => {
 
 export const searchMovie = (movieTitle) => {
     return(dispatch) => {
+        dispatch({ type: "MOVIES_LOADING"})
         fetch(`${devEnvRoot}/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
             dispatch({type: "SEARCH_MOVIES", payload: movieData})
         })
-        .catch()
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 

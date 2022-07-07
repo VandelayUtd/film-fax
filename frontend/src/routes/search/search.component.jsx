@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { Cube } from 'styled-loaders-react'
 import { connect } from 'react-redux';
 
 import { searchMovie, getInfo } from '../../redux/actions/movieActions';
 import { addMovie } from '../../redux/actions/movieActions';
 
 import SearchCard from '../../components/search-card/search-card.component';
-import SearchInput from '../../components/search-input/search-input.component'
+import SearchInput from '../../components/search-input/search-input.component';
 
-import { SearchResultsContainer } from './search.styles'
+import { SearchResultsContainer } from './search.styles';
 
  class Search extends Component {
 
@@ -37,40 +38,49 @@ import { SearchResultsContainer } from './search.styles'
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <SearchInput 
-                        onChange={this.handleChange} 
-                        name='title'
-                        type='text'
-                        value={this.state.title}
-                        label='Search'    
-                    />
-                </form>
-                <SearchResultsContainer>
-                    {   this.props.searchedMovies.length > 0 ?
-                        this.props.searchedMovies.map(movie => (
+            <> 
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <SearchInput 
+                            onChange={this.handleChange} 
+                            name='title'
+                            type='text'
+                            value={this.state.title}
+                            label='Search'    
+                        />
+                    </form>
+                    { this.props.searchedMovies.loading ? 
 
-                            <SearchCard
-                                key={movie.id} 
-                                movie={movie} 
-                                addMovie={this.props.addMovie}
-                                getInfo={this.props.getInfo}
-                                movieInfo={this.props.movieInfo} 
-                            />
-                ))
-                        : 
-                        null 
-                }
-                </SearchResultsContainer>
-            </div>
+                        <Cube />
+                        :
+                        <SearchResultsContainer>
+                            {   this.props.searchedMovies.length > 0 ?
+                                this.props.searchedMovies.map(movie => (
+
+                                    <SearchCard
+                                        key={movie.id} 
+                                        movie={movie} 
+                                        addMovie={this.props.addMovie}
+                                        getInfo={this.props.getInfo}
+                                        movieInfo={this.props.movieInfo} 
+                                    />
+                        ))
+                                : 
+                                null 
+                        }
+                        </SearchResultsContainer>
+                    }
+                </div>
+                {/* <Loader type='pacman'/> */}
+            </>
         )
     }
 }
 
 const mapStateToProps = ({ searchedMovies }) => ({
     searchedMovies: searchedMovies.all,
-    movieInfo: searchedMovies.movieInfo
+    movieInfo: searchedMovies.movieInfo,
+    loading: searchedMovies.loading
 })
 
 const mapDispatchToProps = {

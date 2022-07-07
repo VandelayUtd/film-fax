@@ -2,8 +2,9 @@ import { useState } from 'react';
 import SearchCardFront from '../search-card-front/search-card-front.component';
 import SearchCardBack from '../search-card-back/search-card-back.component';
 import {  ResultCard } from './search-card.styles';
+import { Cube } from 'styled-loaders-react'
 
-const SearchCard = ({ movie, getInfo, addMovie, movieInfo }) => {
+const SearchCard = ({ movie, getInfo, addMovie, movieInfo, loading }) => {
 
     const [showInfo, setShowInfo] = useState(false)
 

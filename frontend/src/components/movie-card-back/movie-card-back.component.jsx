@@ -3,7 +3,7 @@ import { useSelector,useDispatch } from 'react-redux'
 
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
 
-const MovieCardBack = ({movie, handleToggle, setSimilar, handleDelete, showSimilar}) => {
+const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete, showSimilar}) => {
 
     const similarMovies = movie.similars.map(movie => JSON.parse(movie))
 
@@ -53,7 +53,7 @@ const MovieCardBack = ({movie, handleToggle, setSimilar, handleDelete, showSimil
                         { similarMovies ? 
                             similarMovies.map(similar => (
     
-                                <Similar key={similar.id} onClick={()=> setSimilar(similar.id)} >{similar.title}</Similar>
+                                <Similar key={similar.id} onClick={()=> handleSelectSimilar(similar.id)} >{similar.title}</Similar>
                             ))
                             :
                             <span>this movie is one of a kind</span>

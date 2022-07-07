@@ -5,6 +5,11 @@ function searchReducer( state = { all: [], similar: ''}, action){
             all: action.payload
             }
 
+        case "MOVIES_LOADING":
+            return {...state,
+                loading: true
+            }
+
         case "GET_MOVIE_INFO":
                 return {...state,
                 all: state.all.map(movie => {
@@ -14,7 +19,7 @@ function searchReducer( state = { all: [], similar: ''}, action){
                     return movie;
                 }
                 )
-                }
+            }
 
         case "GET_SIMILAR_INFO":
                 return {...state,
