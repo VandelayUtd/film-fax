@@ -1,27 +1,32 @@
 function searchReducer( state = { all: [], similar: ''}, action){
     switch(action.type) {
 
-        case "MOVIES_LOADING":
+        case "LOADING_SEARCH":
             return {...state,
-                loading: true
+                loadingSearch: true
             }
 
         case "SEARCH_MOVIES": 
             return {...state, 
             all: action.payload,
-            loading: false
+            loadingSearch: false
             }
 
 
+        case "LOADING_INFO":
+            return {...state,
+            loadingInfo:true
+            }
+
         case "GET_MOVIE_INFO":
                 return {...state,
-                all: state.all.map(movie => {
-                    if(movie.id === action.payload.id) {
-                        return action.payload
-                    }
-                    return movie;
-                }
-                )
+                    all: state.all.map(movie => {
+                        if(movie.id === action.payload.id) {
+                            return action.payload
+                        }
+                        return movie;
+                    }), 
+                    loadingInfo: false
             }
 
         case "GET_SIMILAR_INFO":

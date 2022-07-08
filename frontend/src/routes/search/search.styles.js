@@ -6,9 +6,10 @@ export const SearchResultsContainer = styled.div`
         background-color: #222222;
     }
 
-    padding: 2rem;
-    margin-right: 4rem;
-    margin-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-radius: 4px; 

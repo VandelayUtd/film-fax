@@ -37,7 +37,7 @@ export const addMovie = (movie) => {
 
 export const searchMovie = (movieTitle) => {
     return(dispatch) => {
-        dispatch({ type: "MOVIES_LOADING"})
+        dispatch({ type: "LOADING_SEARCH"})
         fetch(`${devEnvRoot}/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
@@ -54,25 +54,31 @@ export const searchMovie = (movieTitle) => {
 export const getInfo = (movieId) => {
     console.log(movieId)
     return(dispatch) => {
+        dispatch({ type: "LOADING_INFO" })
         fetch(`${devEnvRoot}/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
             dispatch({ type: "GET_MOVIE_INFO", payload: data})
         })
-        .catch()
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 
 export const getSimilarInfo = (movieId) => {
     console.log(movieId)
     return(dispatch) => {
+        dispatch({ type: "LOADING_SIMILAR_INFO"})
         fetch(`${devEnvRoot}/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
             dispatch({ type: "GET_SIMILAR_INFO", payload: data})
         })
-        .catch()
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 

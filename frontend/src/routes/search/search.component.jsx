@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Bars } from 'react-loader-spinner'
+import { CubeGrid, Stretch } from 'styled-loaders-react';
 import { connect } from 'react-redux';
 
 import { searchMovie, getInfo } from '../../redux/actions/movieActions';
@@ -52,7 +53,7 @@ import { SearchResultsContainer } from './search.styles';
                     </form>
                     { this.props.loading ?
 
-                    <Bars color='red' />
+                    <CubeGrid color='#F24236' size='200px' />
                         :
                         <SearchResultsContainer>
                             {   this.props.searchedMovies.length > 0 ?
@@ -81,7 +82,7 @@ import { SearchResultsContainer } from './search.styles';
 const mapStateToProps = ({ searchedMovies }) => ({
     searchedMovies: searchedMovies.all,
     movieInfo: searchedMovies.movieInfo,
-    loading: searchedMovies.loading
+    loading: searchedMovies.loadingSearch
 })
 
 const mapDispatchToProps = {
