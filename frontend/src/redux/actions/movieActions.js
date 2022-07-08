@@ -4,7 +4,7 @@ const prodEnvRoot = 'https://film-fax.herokuapp.com/'
 
 export const getMovies = () => {
     return (dispatch) => {
-        fetch(`${devEnvRoot}/movies`)
+        fetch(`${prodEnvRoot}/movies`)
         .then(res => res.json())
         .then(movies => {
             dispatch({ type: "FETCH_MOVIES_SUCCESS", payload: movies})
@@ -17,7 +17,7 @@ export const getMovies = () => {
 export const addMovie = (movie) => {
     return (dispatch) => {
         
-        fetch(`${devEnvRoot}/movies`,{
+        fetch(`${prodEnvRoot}/movies`,{
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
@@ -38,7 +38,7 @@ export const addMovie = (movie) => {
 export const searchMovie = (movieTitle) => {
     return(dispatch) => {
         dispatch({ type: "LOADING_SEARCH"})
-        fetch(`${devEnvRoot}/movies/search?q=${movieTitle}`)
+        fetch(`${prodEnvRoot}/movies/search?q=${movieTitle}`)
         .then(res => res.json())
         .then(movieData => {
             dispatch({type: "SEARCH_MOVIES", payload: movieData})
@@ -55,7 +55,7 @@ export const getInfo = (movieId) => {
     console.log(movieId)
     return(dispatch) => {
         dispatch({ type: "LOADING_INFO" })
-        fetch(`${devEnvRoot}/movies/info/${movieId}`)
+        fetch(`${prodEnvRoot}/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
             dispatch({ type: "GET_MOVIE_INFO", payload: data})
@@ -70,7 +70,7 @@ export const getSimilarInfo = (movieId) => {
     console.log(movieId)
     return(dispatch) => {
         dispatch({ type: "LOADING_SIMILAR_INFO"})
-        fetch(`${devEnvRoot}/movies/info/${movieId}`)
+        fetch(`${prodEnvRoot}/movies/info/${movieId}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -85,7 +85,7 @@ export const getSimilarInfo = (movieId) => {
 
 export const deleteMovie = (movieId) => {
     return(dispatch) => {
-        fetch(`${devEnvRoot}/movies/${movieId}`, {
+        fetch(`${prodEnvRoot}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
