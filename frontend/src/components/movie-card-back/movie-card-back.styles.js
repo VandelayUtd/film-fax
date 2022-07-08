@@ -31,6 +31,7 @@ export const Container = styled.div`
         grid-template-rows: auto;
         padding: 10px;
         margin-bottom: 10px;
+        justify-self: center;
     }
 `
 

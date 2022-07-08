@@ -13,13 +13,13 @@ export const Title = styled.div`
 `
 
 export const MovieContainer = styled.div`
-    background-color: #000000;
+    background-color: #222222;
     margin-right: 4rem;
     margin-left: 4rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-radius: 25px;
-    padding-bottom: 16px; 
+    padding-bottom: 16px;
 
 `
 
@@ -28,7 +28,10 @@ export const MovieGrid = styled.div`
     display: grid;
     margin: 20px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 250px));  
-    ${'' /* background-color: #111111; */}
+
+    @media screen and (max-width: 800px) {
+        justify-items: center;
+    }
     
 `
 
