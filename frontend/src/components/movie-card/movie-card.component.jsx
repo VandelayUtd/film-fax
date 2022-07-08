@@ -10,7 +10,8 @@ const MovieCard = ({ movie }) => {
     const [show, setShow] = useState(false);
     const [showSimilar, setShowSimilar] = useState(false);
     const dispatch = useDispatch()
-    const similar = useSelector(state => state.searchedMovies.similar)
+    const similar = useSelector(state => state.movies.similar)
+
 
     const handleDelete = (movieId) => {
         dispatch(deleteMovie(movieId))

@@ -29,11 +29,6 @@ function searchReducer( state = { all: [], similar: ''}, action){
                     loadingInfo: false
             }
 
-        case "GET_SIMILAR_INFO":
-                return {...state,
-                    similar: action.payload
-                }
-
         default: 
             return state
     }

@@ -1,11 +1,13 @@
 import { useSelector } from 'react-redux'
-import { Cube, CubeGrid, Stretch } from 'styled-loaders-react'
+import { Stretch } from 'styled-loaders-react'
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from './search-card-back.styles'
 
 
 const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
 
     const loadingInfo = useSelector(state => state.searchedMovies.loadingInfo)
+    const loadingSimilarInfo = useSelector(state => state.movies.loadingSimilarInfo)
+
 
     const addMovieAndClose = (movie) => {
         console.log(movie)
@@ -16,9 +18,11 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
     
     return (
         <>
-                <Container>
-       
-
+            <Container>
+            { loadingSimilarInfo ? 
+                <Stretch color='red' size='100px' />
+                : 
+                <>
                     <Cover>
                         <img  src={movie.image} alt='movie poster' />
                         <Title>{movie.title}</Title>
@@ -70,7 +74,9 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
                         </Plot>                
                     </>
                 }
-                </Container>
+                </>
+            }
+            </Container>
             <Overlay />
         </>
     )

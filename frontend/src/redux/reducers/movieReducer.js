@@ -9,6 +9,18 @@ function movieReducer( state = {all: []}, action){
         case "DELETE_MOVIE_SUCCESS":
             return {...state, all: state.all.filter(movie => movie.id !== action.movieId)}
 
+        case "LOADING_SIMILAR_INFO":
+            return {...state,
+                loadingSimilarInfo: true
+            }
+
+        case "GET_SIMILAR_INFO":
+                return {...state,
+                    similar: action.payload,
+                    loadingSimilarInfo: false
+                }
+
+
         default: 
             return state
     }
