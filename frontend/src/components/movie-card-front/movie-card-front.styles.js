@@ -4,6 +4,11 @@ export const Card = styled.div`
     padding-top: 1rem; 
     background-color: #111111;
     transition: 0s background-color;
+    height: 390px;
+    position: relative;
+    @media screen and (max-width: 800px) {
+        width: 300px;
+    }
     
     img { 
         height: 300px;
@@ -23,12 +28,17 @@ export const Card = styled.div`
 
     div {
         text-align: left;
-        margin-left: 2rem;
+        float: left;
+        margin-left: 2em;
         font-family: 'Fira Sans';
-        font-size: 1.2em;
+        font-size: 1em;
         color: white;
         transition: 0s color font-weight; 
     } 
+
+    span {
+
+    }
 
     &:hover {
         background-color: white;
@@ -58,4 +68,7 @@ export const Card = styled.div`
 
 export const Footer = styled.div`
     margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
+
 `

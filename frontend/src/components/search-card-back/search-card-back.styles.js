@@ -18,6 +18,7 @@ export const Container = styled.div`
 
     @media screen and (min-width: 801px) {
         position: fixed;
+        height: 690px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -38,11 +39,12 @@ export const Cover = styled.div`
     @media screen and (min-width: 801px) {
         grid-area: 1 / 1 / 3 / 2;
         margin-bottom: .75rem;
+        
         img {
         margin: .75rem; 
         border: 1px solid orange;
         width: 380px;
-        height: auto; 
+        max-height: 580px; 
         }
 
     }
@@ -60,25 +62,26 @@ export const Cover = styled.div`
 `
 
 export const Details = styled.div`
+    margin-left: 1rem;
+    padding-right: .5rem;
+    margin-right: .75rem;
+    margin-bottom: -3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    color: white;
 
-@media screen and (min-width: 801px) {
-    grid-area: 1 / 2 / 2 / 3;
+    @media screen and (min-width: 801px) {
+        grid-area: 1 / 2 / 2 / 3;
+        margin-top: 1rem;
 
-}
+    }
 
-@media screen and (max-width: 800px) {
-    margin-bottom: 1rem;
-}
+    @media screen and (max-width: 800px) {
+        margin-bottom: 1rem;
+    }
 
-margin-left: 1rem;
-padding-right: .5rem;
-margin-right: .75rem;
-margin-bottom: -3rem;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-text-align: left;
-color: white;
 
     button {
         color: #F24236;

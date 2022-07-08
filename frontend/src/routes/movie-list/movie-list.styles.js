@@ -13,7 +13,11 @@ export const Title = styled.div`
 `
 
 export const MovieContainer = styled.div`
+
+@media screen and (min-width: 800px) {
+
     background-color: #222222;
+}
     margin-right: 4rem;
     margin-left: 4rem;
     margin-top: 3rem;

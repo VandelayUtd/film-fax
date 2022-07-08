@@ -50,7 +50,7 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
                                 : 
                                 null
                             }
-                            { movie.fullCast ?
+                            { movie.fullCast && movie.fullCast.others[2] ?
                                 <span>Cinematography by: {movie.fullCast.others[2].items[0].name ? movie.fullCast.others[2].items[0].name : null }</span>
                                 :
                                 null
@@ -66,8 +66,8 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
                         </Details>
                         <Plot>
                         <h3>Summary</h3>
-                            <p>{ movie.plot && movie.plot.length > 250 ? 
-                                    `${movie.plot.substring(0, 250)}...`
+                            <p>{ movie.plot && movie.plot.length > 280 ? 
+                                    `${movie.plot.substring(0, 280)}...`
                                 : movie.plot
                                 }
                             </p>

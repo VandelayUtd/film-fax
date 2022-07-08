@@ -29,6 +29,7 @@ export const addMovie = (movie) => {
         })
         .then(res => res.json())
         .then(movie => {
+            console.log(movie)
             if (movie.error){
                 alert(movie.error)
             } else {
