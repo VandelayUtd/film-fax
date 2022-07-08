@@ -10,6 +10,9 @@ export const getMovies = () => {
             dispatch({ type: "FETCH_MOVIES_SUCCESS", payload: movies})
             }
         )
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 
@@ -32,6 +35,9 @@ export const addMovie = (movie) => {
                 alert(`${movie.title} has been added to the list`)
             dispatch({type: "ADD_MOVIE", payload: movie})
         }})
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 
@@ -94,6 +100,9 @@ export const deleteMovie = (movieId) => {
         .then(res => res.json())
         .then(movieData => {
             dispatch({ type:"DELETE_MOVIE_SUCCESS", payload: movieData, movieId})
+        })
+        .catch(err => {
+            console.log(err)
         })
     }
 }
