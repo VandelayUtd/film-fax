@@ -25,6 +25,9 @@ class MoviesController < ApplicationController
         movie.runtime = created_movie["runtimeStr"]
         movie.rotten_tomatoes_rating = created_movie["ratings"]["rottenTomatoes"]
         movie.similars = created_movie["similars"].map{|movie| movie.to_json}
+        movie.imdb_rating = created_movie["imDbRating"]
+        movie.rating = created_movie["contentRating"]
+        movie.languages = created_movie["languages"]
 
         
         if movie.save 

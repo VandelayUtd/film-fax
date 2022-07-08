@@ -26,12 +26,12 @@ const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete, 
                     <span>Directed by {movie.director}</span>
                     <span>{movie.release_date}</span>
                     <br/>
-                    <span>Rated: {movie.contentRating}</span>
+                    <span>Rated: {movie.rating}</span>
                     <span>Runtime: {movie.runtime}</span>
                     <span>Staring: {movie.stars}</span>
                     <span>Genres: {movie.genres}</span>
                     <span>Languages: {movie.languages}</span>
-                    <span>iMDb Rating: {movie.imDbRating}</span>
+                    <span>iMDb Rating: {movie.imdb_rating}</span>
                     <span>Rotten Tomatoes Rating: {movie.rotten_tomatoes_rating}%</span>
                     <span>Director of Photography: {movie.dp}</span>
                     <a href={`https://www.imdb.com/title/${movie.api_id}/technical`} target='_blank' rel='noopener noreferrer'>

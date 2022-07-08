@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_144040) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_08_171835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_144040) do
     t.string "tech_specs"
     t.string "runtime"
     t.string "similars", default: [], array: true
+    t.string "languages"
+    t.string "rating"
+    t.string "imdb_rating"
   end
 
 end
