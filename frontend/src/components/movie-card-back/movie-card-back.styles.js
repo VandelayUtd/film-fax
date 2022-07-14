@@ -28,7 +28,7 @@ export const Container = styled.div`
     @media screen and (max-width: 800px) {
         grid-template-columns: 325px;
         width: 330px;
-        grid-template-rows: 600px 300px 300px;
+        grid-template-rows: 600px 330px 300px;
         padding: 10px;
         margin-bottom: 10px;
         justify-self: center;

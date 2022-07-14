@@ -10,7 +10,6 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
 
 
     const addMovieAndClose = (movie) => {
-        console.log(movie)
         addMovie(movie)
         setShowInfo()
     }

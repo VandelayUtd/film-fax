@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Bars } from 'react-loader-spinner'
-import { CubeGrid, Stretch } from 'styled-loaders-react';
+import { CubeGrid } from 'styled-loaders-react';
 import { connect } from 'react-redux';
 
 import { searchMovie, getInfo } from '../../redux/actions/movieActions';
@@ -73,7 +72,6 @@ import { SearchResultsContainer } from './search.styles';
                         </SearchResultsContainer>
                     }
                 </div>
-                {/* <Loader type='pacman'/> */}
             </>
         )
     }

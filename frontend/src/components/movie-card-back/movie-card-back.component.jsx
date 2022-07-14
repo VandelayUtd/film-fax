@@ -1,9 +1,7 @@
-import { useSelector,useDispatch } from 'react-redux'
-
 
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
 
-const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete, showSimilar}) => {
+const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete}) => {
 
     const similarMovies = movie.similars.map(movie => JSON.parse(movie))
 
@@ -35,7 +33,7 @@ const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete, 
                     <span>Rotten Tomatoes Rating: {movie.rotten_tomatoes_rating}%</span>
                     <span>Director of Photography: {movie.dp}</span>
                     <a href={`https://www.imdb.com/title/${movie.api_id}/technical`} target='_blank' rel='noopener noreferrer'>
-                        <button onClick={()=> console.log(movie)}>Technical Specs</button>
+                        <button>Technical Specs</button>
                     </a>
                 </Details>
 
