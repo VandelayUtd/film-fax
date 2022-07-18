@@ -1,11 +1,9 @@
 
-import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles'
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover, Similar, SimilarContainer, StyledButton } from './movie-card-back.styles';
 
 const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete}) => {
 
-    const similarMovies = movie.similars.map(movie => JSON.parse(movie))
-
-
+    const similarMovies = movie.similars.map(movie => JSON.parse(movie));
 
     return (
         <>
@@ -61,8 +59,8 @@ const MovieCardBack = ({movie, handleToggle, handleSelectSimilar, handleDelete})
             </Container>
             <Overlay />
         </>
-    )
-}
+    );
+};
 
-export default MovieCardBack
+export default MovieCardBack;
 

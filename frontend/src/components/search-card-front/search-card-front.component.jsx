@@ -1,4 +1,4 @@
-import { TextArea, ButtonContainer, Container } from './search-card-front.styles'
+import { TextArea, ButtonContainer, Container } from './search-card-front.styles';
 
 const SearchCardFront = ({ movie, handleInfo, addMovie}) => {
 
@@ -19,6 +19,6 @@ const SearchCardFront = ({ movie, handleInfo, addMovie}) => {
                 </div>   
             </Container>
         </>
-    )
-}
+    );
+};
 export default SearchCardFront

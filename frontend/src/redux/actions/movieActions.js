@@ -1,5 +1,5 @@
 
-const devEnvRoot = 'http://127.0.0.1:3001/'
+// const devEnvRoot = 'http://127.0.0.1:3001/'
 const prodEnvRoot = 'https://film-fax.herokuapp.com/'
 
 export const getMovies = () => {

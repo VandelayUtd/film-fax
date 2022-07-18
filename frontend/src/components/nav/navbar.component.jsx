@@ -1,8 +1,8 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
+
 import { NavLink, NavContainer, LineA, LineB, LineC, LineD, LineE } from './navbar.styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilm, faClapperboard, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilm, faClapperboard, faUserSecret } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
     return (

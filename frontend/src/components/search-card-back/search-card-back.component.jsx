@@ -1,18 +1,20 @@
-import { useSelector } from 'react-redux'
-import { Stretch } from 'styled-loaders-react'
-import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from './search-card-back.styles'
+import { useSelector } from 'react-redux';
+
+import { Stretch } from 'styled-loaders-react';
+
+import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from './search-card-back.styles';
 
 
 const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
 
-    const loadingInfo = useSelector(state => state.searchedMovies.loadingInfo)
-    const loadingSimilarInfo = useSelector(state => state.movies.loadingSimilarInfo)
+    const loadingInfo = useSelector(state => state.searchedMovies.loadingInfo);
+    const loadingSimilarInfo = useSelector(state => state.movies.loadingSimilarInfo);
 
 
     const addMovieAndClose = (movie) => {
-        addMovie(movie)
-        setShowInfo()
-    }
+        addMovie(movie);
+        setShowInfo();
+    };
 
     
     return (
@@ -78,7 +80,7 @@ const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
             </Container>
             <Overlay />
         </>
-    )
-}
+    );
+};
 
-export default SearchCardBack
+export default SearchCardBack;
