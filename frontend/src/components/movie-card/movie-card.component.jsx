@@ -28,13 +28,10 @@ const MovieCard = ({ movie }) => {
 
     //cleanup 
     const handleSelectSimilar = async id => {
-        console.log("1")
         await new Promise((resolve, reject)=> {
             dispatch(getSimilarInfo(id))
             resolve()
-            console.log("2")
         })
-        console.log("3")
         setShowSimilar(!showSimilar)
     };
 

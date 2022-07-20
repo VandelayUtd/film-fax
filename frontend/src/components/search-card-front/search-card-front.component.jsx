@@ -9,7 +9,6 @@ const SearchCardFront = ({ movie, handleInfo, addMovie}) => {
                 <div>
                     <TextArea>
                         <span>{movie.title}</span>
-                        <span>{movie.details}</span>
                     </TextArea>
                     <br/>
                     <ButtonContainer>

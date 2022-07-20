@@ -5,7 +5,7 @@ import { Stretch } from 'styled-loaders-react';
 import { Details, ButtonContainer, Container, Title, Plot, Overlay, Cover } from './search-card-back.styles';
 
 
-const SearchCardBack = ({movie, addMovie, setShowInfo }) => {
+const SearchCardBack = ({movie, addMovie, setShowInfo}) => {
 
     const loadingInfo = useSelector(state => state.searchedMovies.loadingInfo);
     const loadingSimilarInfo = useSelector(state => state.movies.loadingSimilarInfo);
