@@ -55,7 +55,7 @@ import { SearchResultsContainer } from './search.styles';
                     <CubeGrid color='#F24236' size='200px' />
                         :
                         <SearchResultsContainer>
-                            {   this.props.searchedMovies.length > 0 ?
+                            {   this.props.searchedMovies && this.props.searchedMovies.length > 0 ?
                                 this.props.searchedMovies.map(movie => (
 
                                     <SearchCard
