@@ -23,6 +23,7 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: film_fax_database_production
   username: film_fax
   password: <%= ENV['FILM_FAX_DATABASE_PASSWORD'] %>
