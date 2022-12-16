@@ -215,7 +215,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   listen (~> 3.3)
-  pg (= 1.2.3)
+  pg
   pry
   puma (~> 5.6)
   rack-cors
