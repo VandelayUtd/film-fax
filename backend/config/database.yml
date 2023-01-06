@@ -25,7 +25,7 @@ production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
   database: film_fax_database_production
-  username: film_fax
+  username: drew
   password: <%= ENV['FILM_FAX_DATABASE_PASSWORD'] %>
 
 # default: &default
